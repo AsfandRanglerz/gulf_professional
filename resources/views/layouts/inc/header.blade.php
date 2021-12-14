@@ -14,6 +14,7 @@ if (config('settings.geo_location.country_flag_activation')) {
 	}
 }
 
+
 // Logo Label
 $logoLabel = '';
 if (request()->segment(1) != 'countries') {
