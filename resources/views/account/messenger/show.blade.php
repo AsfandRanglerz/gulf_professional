@@ -16,20 +16,20 @@
 @section('content')
 	@includeFirst([config('larapen.core.customizedViewPath') . 'common.spacer', 'common.spacer'])
     <div class="main-container">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-    
+
                 <div class="col-md-3 page-sidebar">
                     @includeFirst([config('larapen.core.customizedViewPath') . 'account.inc.sidebar', 'account.inc.sidebar'])
                 </div>
                 <!--/.page-sidebar-->
-                
+
                 <div class="col-md-9 page-content">
                     <div class="inner-box">
                         <h2 class="title-2">
                             <i class="icon-mail"></i> {{ t('inbox') }}
                         </h2>
-    
+
                         @if (Session::has('flash_notification'))
                             <div class="row">
                                 <div class="col-xl-12">
@@ -37,7 +37,7 @@
                                 </div>
                             </div>
                         @endif
-                        
+
                         @if (isset($errors) and $errors->any())
                             <div class="alert alert-danger">
                                 <ul class="list list-check">
@@ -47,10 +47,10 @@
                                 </ul>
                             </div>
                         @endif
-    
+
                         <div id="successMsg" class="alert alert-success hide" role="alert"></div>
                         <div id="errorMsg" class="alert alert-danger hide" role="alert"></div>
-                        
+
                         <div class="inbox-wrapper">
                             <div class="row">
                                 <div class="col-md-12 col-lg-12">
@@ -75,7 +75,7 @@
                                                 <strong>{{ t('Contact request about') }}</strong> <a href="{{ \App\Helpers\UrlGen::post($thread->post) }}">{{ $thread->post->title }}</a>
                                             </p>
                                         </div>
-    
+
                                         <div class="message-tool-bar-right pull-right call-xhr-action">
                                             <div class="btn-group btn-group-sm">
                                                 @if ($thread->isImportant())
@@ -134,21 +134,21 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <hr>
-                            
+
                             <div class="row">
                                 @include('account.messenger.partials.sidebar')
-                                
+
                                 <div class="col-md-9 col-lg-10 chat-row">
                                     <div class="message-chat p-2 rounded">
                                         <div id="messageChatHistory" class="message-chat-history">
                                             <div id="linksMessages" class="text-center">
                                                 {!! $linksRender !!}
                                             </div>
-                                            
+
                                             @include('account.messenger.messages.messages')
-                                            
+
                                         </div>
 
                                         <div class="type-message">
@@ -221,12 +221,12 @@
     </script>
     <script src="{{ url('assets/js/app/messenger.js') }}" type="text/javascript"></script>
     <script src="{{ url('assets/js/app/messenger-chat.js') }}" type="text/javascript"></script>
-    
+
     <script src="{{ url('assets/plugins/bootstrap-fileinput/js/plugins/sortable.min.js') }}" type="text/javascript"></script>
     <script src="{{ url('assets/plugins/bootstrap-fileinput/js/fileinput.min.js') }}" type="text/javascript"></script>
     <script src="{{ url('assets/plugins/bootstrap-fileinput/themes/fa/theme.js') }}" type="text/javascript"></script>
     <script src="{{ url('js/fileinput/locales/' . config('app.locale') . '.js') }}" type="text/javascript"></script>
-    
+
     <script>
         /* Initialize with defaults (filename) */
         $('#addFile').fileinput(

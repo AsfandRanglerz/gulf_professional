@@ -26,17 +26,17 @@
 @section('content')
 	@includeFirst([config('larapen.core.customizedViewPath') . 'common.spacer', 'common.spacer'])
 	<div class="main-container inner-page">
-		<div class="container" id="pricing">
-			
+		<div class="container-fluid" id="pricing">
+
 			<h1 class="text-center title-1" style="text-transform: none;">
 				<strong>{{ t('Pricing') }}</strong>
 			</h1>
 			<hr class="center-block small mt-0">
-			
+
 			<p class="text-center">
 				{{ t('premium_plans_hint') }}
 			</p>
-			
+
 			<div class="row mt-5 mb-md-5 justify-content-center">
 				@if ($packages->count() > 0)
 					@foreach($packages as $package)
@@ -100,7 +100,7 @@
 					</div>
 				@endif
 			</div>
-			
+
 		</div>
 	</div>
 @endsection

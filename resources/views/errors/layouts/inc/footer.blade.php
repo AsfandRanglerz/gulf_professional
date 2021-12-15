@@ -22,9 +22,9 @@ if (
 ?>
 <footer class="main-footer">
 	<div class="footer-content">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
-				
+
 				@if (!config('settings.footer.hide_links'))
 					<div class="{{ $colClass1 }}">
 						<div class="footer-col">
@@ -55,7 +55,7 @@ if (
 							</ul>
 						</div>
 					</div>
-					
+
 					<div class="{{ $colClass2 }}">
 						<div class="footer-col">
 							<h4 class="footer-title">{{ t('Contact and Sitemap') }}</h4>
@@ -72,7 +72,7 @@ if (
 							</ul>
 						</div>
 					</div>
-					
+
 					<div class="{{ $colClass3 }}">
 						<div class="footer-col">
 							<h4 class="footer-title">{{ t('My Account') }}</h4>
@@ -88,7 +88,7 @@ if (
 							</ul>
 						</div>
 					</div>
-					
+
 					@if (
 						config('settings.other.ios_app_url') or
 						config('settings.other.android_app_url') or
@@ -135,7 +135,7 @@ if (
 									$footerSocialTitleClass = 'no-margin';
 									?>
 								@endif
-								
+
 								@if (
 									config('settings.social_link.facebook_page_url') or
 									config('settings.social_link.twitter_url') or
@@ -197,10 +197,10 @@ if (
 							</div>
 						</div>
 					@endif
-					
+
 					<div style="clear: both"></div>
 				@endif
-				
+
 				<div class="col-xl-12">
 					@if (!config('settings.footer.hide_payment_plugins_logos') and isset($paymentMethods) and $paymentMethods->count() > 0)
 						<div class="text-center paymanet-method-logo">
@@ -216,7 +216,7 @@ if (
 							<hr>
 						@endif
 					@endif
-					
+
 					<div class="copy-info text-center">
 						© {{ date('Y') }} {{ config('settings.app.app_name') }}. {{ t('all_rights_reserved') }}.
 						@if (!config('settings.footer.hide_powered_by'))
@@ -228,7 +228,7 @@ if (
 						@endif
 					</div>
 				</div>
-			
+
 			</div>
 		</div>
 	</div>

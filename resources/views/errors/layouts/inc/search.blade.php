@@ -4,12 +4,12 @@ $countryCode = 'us'; /* @fixme - Issue only in multi-countries mode. Get the rea
 $searchUrl = \App\Helpers\UrlGen::search();
 ?>
 <div class="h-spacer"></div>
-<div class="container">
+<div class="container-fluid">
 	<div class="intro rounded-bottom">
 		<div class="dtable hw100">
 			<div class="dtable-cell hw100">
 				<div class="container text-center">
-					
+
 					<div class="search-row fadeInUp">
 						<form id="seach" name="search" action="{{ $searchUrl }}" method="GET">
 							<div class="row m-0">
@@ -17,14 +17,14 @@ $searchUrl = \App\Helpers\UrlGen::search();
 									<i class="icon-docs icon-append"></i>
 									<input type="text" name="q" class="form-control has-icon" placeholder="{{ t('what') }}" value="">
 								</div>
-								
+
 								<div class="col-sm-5 col-xs-12 search-col relative locationicon">
 									<i class="icon-location-2 icon-append"></i>
 									<input type="hidden" id="lSearch" name="l" value="">
 									<input type="text" id="locSearch" name="location" class="form-control locinput input-rel searchtag-input has-icon"
 										   placeholder="{{ t('where') }}" value="">
 								</div>
-								
+
 								<div class="col-sm-2 col-xs-12 search-col">
 									<button class="btn btn-primary btn-search btn-block"><i class="icon-search"></i><strong>{{ t('find') }}</strong>
 									</button>

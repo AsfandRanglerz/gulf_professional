@@ -161,7 +161,7 @@
 
 	@if (isset($siteCountryInfo))
 		<div class="h-spacer"></div>
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-xl-12">
 					<div class="alert alert-warning">

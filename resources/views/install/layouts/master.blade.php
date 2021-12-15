@@ -20,11 +20,11 @@
 	<meta name="robots" content="noindex,nofollow"/>
 	<meta name="googlebot" content="noindex">
 	<title>@yield('title')</title>
-	
+
 	@yield('before_styles')
-	
+
 	<link href="{{ url(mix('css/app.css')) }}" rel="stylesheet">
-	
+
 	@yield('after_styles')
 
     <!--[if lt IE 9]>
@@ -46,7 +46,7 @@
 		@include('install.layouts.inc.header')
 	@show
 
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-12 col-md-12 col-xl-12">
 				<h1 class="text-center title-1 font-weight-bold mt-5 mb-3" style="text-transform: none;">
@@ -68,10 +68,10 @@
 			</div>
 		</div>
 	</div>
-	
+
 	@include('common.spacer')
 	<div class="main-container">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-sm-12 col-md-12 col-xl-12">
 					<div class="inner-box">
@@ -81,7 +81,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	@section('footer')
 		@include('install.layouts.inc.footer')
 	@show
@@ -95,7 +95,7 @@
 	var siteUrl = '{{ url('/') }}';
 	var languageCode = '{{ config('app.locale') }}';
 	var countryCode = '{{ config('country.code', 0) }}';
-	
+
 	/* Init. Translation vars */
 	var langLayout = {
 		'hideMaxListItems': {

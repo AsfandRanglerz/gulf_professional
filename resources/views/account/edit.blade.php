@@ -16,7 +16,7 @@
 @section('content')
 	@includeFirst([config('larapen.core.customizedViewPath') . 'common.spacer', 'common.spacer'])
 	<div class="main-container">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-3 page-sidebar">
 					@includeFirst([config('larapen.core.customizedViewPath') . 'account.inc.sidebar', 'account.inc.sidebar'])
@@ -38,7 +38,7 @@
 							</ul>
 						</div>
 					@endif
-					
+
 					<div id="avatarUploadError" class="center-block" style="width:100%; display:none"></div>
 					<div id="avatarUploadSuccess" class="alert alert-success fade show" style="display:none;"></div>
 
@@ -69,7 +69,7 @@
 										</div>
 										<div class="clearfix"></div>
 									</div> --}}
-									
+
 									<!-- Traffic Stats -->
 									<div class="hdata">
 										<div class="mcol-left">
@@ -104,7 +104,7 @@
 										</div>
 										<div class="clearfix"></div>
 									</div> --}}
-									
+
 
 									<!-- Favorites Stats -->
 									{{-- <div class="hdata">
@@ -133,7 +133,7 @@
                                 {{ t('You last logged in at') }}: {{ \App\Helpers\Date::format($user->last_login_at, true) }}
                             </span>
 						</div>
-						
+
 						<div id="accordion" class="panel-group">
 							<!-- PHOTO -->
 							<!-- <div class="card card-default">
@@ -147,21 +147,21 @@
 										<form name="details" class="form-horizontal" role="form" method="POST" action="{{ url('account/' . $user->id . '/photo') }}">
 											<div class="row">
 												<div class="col-xl-12 text-center">
-													
+
 													<?php $photoError = (isset($errors) and $errors->has('photo')) ? ' is-invalid' : ''; ?>
 													<div class="photo-field">
 														<div class="file-loading">
 															<input id="photoField" name="photo" type="file" class="file {{ $photoError }}">
 														</div>
 													</div>
-												
+
 												</div>
 											</div>
 										</form>
 									</div>
 								</div>
 							</div> -->
-							
+
 							<!-- USER -->
 							<div class="card card-default">
 								<div class="card-header">
@@ -198,7 +198,7 @@
 													@endif
 												</div>
 											</div>
-												
+
 											<!-- name -->
 											<?php $nameError = (isset($errors) and $errors->has('name')) ? ' is-invalid' : ''; ?>
 											<div class="form-group row required d-none">
@@ -207,7 +207,7 @@
 													<input name="name" type="text" class="form-control{{ $nameError }}" placeholder="" value="{{ old('name', $user->name) }}">
 												</div>
 											</div>
-											
+
 											<!-- username -->
 											<?php $usernameError = (isset($errors) and $errors->has('username')) ? ' is-invalid' : ''; ?>
 											<div class="form-group row required d-none">
@@ -216,7 +216,7 @@
 													<div class="input-group-prepend">
 														<span class="input-group-text"><i class="icon-user"></i></span>
 													</div>
-													
+
 													<input  id="username"
 														   name="username"
 														   type="text"
@@ -226,7 +226,7 @@
 													>
 												</div>
 											</div>
-												
+
 											<!-- email -->
 											<?php $emailError = (isset($errors) and $errors->has('email')) ? ' is-invalid' : ''; ?>
 											<div class="form-group row required">
@@ -239,7 +239,7 @@
 													<div class="input-group-prepend">
 														<span class="input-group-text"><i class="icon-mail"></i></span>
 													</div>
-													
+
 													<input disabled id="email"
 														   name="email"
 														   type="email"
@@ -249,7 +249,7 @@
 													>
 												</div>
 											</div>
-                                                
+
                                             <!-- country_code -->
                                             <?php
                                             /*
@@ -274,7 +274,7 @@
                                             */
                                             ?>
                                             <input name="country_code" type="hidden" value="{{ $user->country_code }}">
-												
+
 											<!-- phone -->
 											<?php $phoneError = (isset($errors) and $errors->has('phone')) ? ' is-invalid' : ''; ?>
 											<div class="form-group row required">
@@ -287,11 +287,11 @@
 													<div class="input-group-prepend">
 														<span id="phoneCountry" class="input-group-text">{!! getPhoneIcon(old('country_code', $user->country_code)) !!}</span>
 													</div>
-													
+
 													<input id="phone" name="phone" type="text" class="form-control{{ $phoneError }}"
 														   placeholder="{{ (!isEnabledField('email')) ? t('Mobile Phone Number') : t('phone_number') }}"
 														   value="{{ phoneFormat(old('phone', $user->phone), old('country_code', $user->country_code)) }}">
-													
+
 													{{-- <div class="input-group-append">
 														<span class="input-group-text">
 															<input name="phone_hidden" id="phoneHidden" type="checkbox"
@@ -305,7 +305,7 @@
 											<div class="form-group row">
 												<div class="offset-md-3 col-md-9"></div>
 											</div>
-											
+
 											<!-- Button -->
 											<div class="form-group row">
 												<div class="offset-md-3 col-md-9">
@@ -316,7 +316,7 @@
 									</div>
 								</div>
 							</div>
-							
+
 							<!-- SETTINGS -->
 							<div class="card card-default">
 								<div class="card-header">
@@ -328,7 +328,7 @@
 											{!! csrf_field() !!}
 											<input name="_method" type="hidden" value="PUT">
 											<input name="panel" type="hidden" value="settingsPanel">
-										
+
 											@if (config('settings.single.activation_facebook_comments') and config('services.facebook.client_id'))
 												<!-- disable_comments -->
 												<div class="form-group row">
@@ -347,7 +347,7 @@
 													</div>
 												</div>
 											@endif
-											
+
 											<!-- password -->
 											<?php $passwordError = (isset($errors) and $errors->has('password')) ? ' is-invalid' : ''; ?>
 											<div class="form-group row">
@@ -356,7 +356,7 @@
 													<input id="password" name="password" type="password" class="form-control{{ $passwordError }}" placeholder="{{ t('password') }}">
 												</div>
 											</div>
-											
+
 											<!-- password_confirmation -->
 											<?php $passwordError = (isset($errors) and $errors->has('password')) ? ' is-invalid' : ''; ?>
 											<div class="form-group row">
@@ -366,7 +366,7 @@
 														   class="form-control{{ $passwordError }}" placeholder="{{ t('Confirm Password') }}">
 												</div>
 											</div>
-											
+
 											@if ($user->accept_terms != 1)
 												<!-- accept_terms -->
 												<?php $acceptTermsError = (isset($errors) and $errors->has('accept_terms')) ? ' is-invalid' : ''; ?>
@@ -379,7 +379,7 @@
 																   value="1"
 																   type="checkbox" {{ (old('accept_terms', $user->accept_terms)=='1') ? 'checked="checked"' : '' }}
 															>
-															
+
 															<label class="form-check-label" for="acceptTerms" style="font-weight: normal;">
 																{!! t('accept_terms_label', ['attributes' => getUrlPageByType('terms')]) !!}
 															</label>
@@ -387,10 +387,10 @@
 														<div style="clear:both"></div>
 													</div>
 												</div>
-												
+
 												<input type="hidden" name="user_accept_terms" value="{{ (int)$user->accept_terms }}">
 											@endif
-											
+
 											<!-- accept_marketing_offers -->
 											<?php $acceptMarketingOffersError = (isset($errors) and $errors->has('accept_marketing_offers')) ? ' is-invalid' : ''; ?>
 											<div class="form-group row required d-none">
@@ -403,7 +403,7 @@
 															   checked
 															   type="checkbox" {{ (old('accept_marketing_offers', $user->accept_marketing_offers)=='1') ? 'checked="checked"' : '' }}
 														>
-														
+
 														<label class="form-check-label" for="acceptMarketingOffers" style="font-weight: normal;">
 															{!! t('accept_marketing_offers_label') !!}
 														</label>
@@ -411,7 +411,7 @@
 													<div style="clear:both"></div>
 												</div>
 											</div>
-											
+
 											<!-- time_zone -->
 											<?php $timeZoneError = (isset($errors) and $errors->has('time_zone')) ? ' is-invalid' : ''; ?>
 											{{--<div class="form-group row required">
@@ -446,7 +446,7 @@
 													</small>
 												</div>
 											</div>--}}
-											
+
 											<!-- Button -->
 											<div class="form-group row">
 												<div class="offset-md-3 col-md-9">
@@ -512,7 +512,7 @@
 			font-family: monospace;
 			font-weight: normal;
 		}
-		
+
 		.file-preview {
 			padding: 2px;
 		}
@@ -522,7 +522,7 @@
 		.file-drop-zone .file-preview-thumbnails {
 			cursor: pointer;
 		}
-		
+
 		.krajee-default.file-preview-frame .file-thumbnail-footer {
 			height: 30px;
 		}
@@ -539,7 +539,7 @@
 		var footerPreview = '<div class="file-thumbnail-footer pt-2">\n' +
 			'    {actions}\n' +
 			'</div>';
-		
+
 		$('#photoField').fileinput(
 		{
 			theme: "fa",
@@ -593,20 +593,20 @@
 					@endif
 				}
 			],
-			
+
 			showClose: false,
 			fileActionSettings: {
 				removeIcon: '<i class="far fa-trash-alt"></i>',
 				removeClass: 'btn btn-sm btn-danger',
 				removeTitle: '{{ t('Remove file') }}'
 			},
-			
+
 			elErrorContainer: '#avatarUploadError',
 			msgErrorClass: 'alert alert-block alert-danger',
-			
+
 			layoutTemplates: {main2: '{preview} {remove} {browse}', footer: footerPreview}
 		});
-		
+
 		/* Auto-upload added file */
 		$('#photoField').on('filebatchselected', function(event, data, id, index) {
 			if (typeof data === 'object') {
@@ -620,15 +620,15 @@
 					return true;
 				}
 			}
-			
+
 			return false;
 		});
-		
+
 		/* Show upload status message */
 		$('#photoField').on('filebatchpreupload', function(event, data, id, index) {
 			$('#avatarUploadSuccess').html('<ul></ul>').hide();
 		});
-		
+
 		/* Show success upload message */
 		$('#photoField').on('filebatchuploadsuccess', function(event, data, previewId, index) {
 			/* Show uploads success messages */
@@ -641,10 +641,10 @@
 			});
 			$('#avatarUploadSuccess ul').append(out);
 			$('#avatarUploadSuccess').fadeIn('slow');
-			
+
 			$('#userImg').attr({'src':$('.photo-field .kv-file-content .file-preview-image').attr('src')});
 		});
-		
+
 		/* Delete picture */
 		$('#photoField').on('filepredelete', function(jqXHR) {
 			var abort = true;
@@ -653,10 +653,10 @@
 			}
 			return abort;
 		});
-		
+
 		$('#photoField').on('filedeleted', function() {
 			$('#userImg').attr({'src':'{!! !empty($gravatar) ? $gravatar : url('images/user.jpg') !!}'});
-			
+
 			var out = "{{ t('Your photo or avatar has been deleted') }}";
 			$('#avatarUploadSuccess').html('<ul><li></li></ul>').hide();
 			$('#avatarUploadSuccess ul li').append(out);

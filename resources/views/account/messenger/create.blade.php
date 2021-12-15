@@ -16,9 +16,9 @@
 @section('content')
 	@includeFirst([config('larapen.core.customizedViewPath') . 'common.spacer', 'common.spacer'])
     <div class="main-container">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-    
+
                 @if (Session::has('flash_notification'))
                     <div class="col-xl-12">
                         <div class="row">
@@ -28,12 +28,12 @@
                         </div>
                     </div>
                 @endif
-    
+
                 <div class="col-md-3 page-sidebar">
                     @includeFirst([config('larapen.core.customizedViewPath') . 'account.inc.sidebar', 'account.inc.sidebar'])
                 </div>
                 <!--/.page-sidebar-->
-                
+
                 <div class="col-md-9 page-content">
                     <div class="inner-box">
                         <h2 class="title-2"><i class="fas fa-edit"></i> Compose Mail </h2>
@@ -126,12 +126,12 @@
 	<script>window.jQuery || document.write('<script src="assets/js/jquery/jquery-3.3.1.min.js">\x3C/script>')</script>
 	<script src="assets/bootstrap/js/bootstrap.bundle.js"></script>
 	<script src="assets/js/vendors.min.js"></script>
-	
+
 	<!-- include custom script for site -->
 	<script src="assets/js/main.min.js"></script>
 	*/
 	?>
-	
+
 	<!-- include custom script for ads table [select all checkbox] -->
 	<script>
 		function checkAll(bx) {

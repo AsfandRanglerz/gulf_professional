@@ -16,7 +16,7 @@
 @section('content')
 	@includeFirst([config('larapen.core.customizedViewPath') . 'common.spacer', 'common.spacer'])
 	<div class="main-container">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 
 				@if (Session::has('flash_notification'))
@@ -72,7 +72,7 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<table id="addManageTable" class="table table-striped table-bordered add-manage-table table demo" data-filter="#filter" data-filter-text-only="true">
 									<thead>
 									<tr>
@@ -106,7 +106,7 @@
 
 										// Get Post's URL
 										$postUrl = \App\Helpers\UrlGen::post($post);
-                                    
+
                                     	// Get Post's Pictures
                                         if ($post->pictures->count() > 0) {
                                             $postImg = imgUrl($post->pictures->get(0)->filename, 'medium');
@@ -201,7 +201,7 @@
 												@if($pagePath=='favourite')
 
 													<?php
-							
+
 													$xfUser = \XF::em()->findOne('XF:User',['email','=',$post->User->email]);
 													if($xfUser) {
 										$btnLink = url("forum/index.php?members/".$xfUser->user_id);
@@ -236,7 +236,7 @@
 								</table>
 							</form>
 						</div>
-                            
+
                         <nav>
                             {{ (isset($posts)) ? $posts->links() : '' }}
                         </nav>
@@ -278,12 +278,12 @@
 			$('#checkAll').click(function () {
 				checkAll(this);
 			});
-			
+
 			$('a.delete-action, button.delete-action, a.confirm-action').click(function(e)
 			{
 				e.preventDefault(); /* prevents the submit or reload */
 				var confirmation = confirm("{{ t('confirm_this_action') }}");
-				
+
 				if (confirmation) {
 					if( $(this).is('a') ){
 						var url = $(this).attr('href');
@@ -293,9 +293,9 @@
 					} else {
 						$('form[name=listForm]').submit();
 					}
-					
+
 				}
-				
+
 				return false;
 			});
 		});

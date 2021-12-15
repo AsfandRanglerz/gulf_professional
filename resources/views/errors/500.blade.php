@@ -21,7 +21,7 @@
 @section('content')
 	@includeFirst([config('larapen.core.customizedViewPath') . 'common.spacer', 'common.spacer'])
 	<div class="main-container inner-page">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="section-content">
 				<div class="row">
 
@@ -34,7 +34,7 @@
 								<p>
 									<?php
 									$defaultErrorMessage = "An internal server error has occurred. If the error persists please contact the development team.";
-									
+
 									if (isset($exception)) {
 										echo ($exception->getMessage()) ? $exception->getMessage() : $defaultErrorMessage;
 									} else {
@@ -49,7 +49,7 @@
 
 				</div>
 			</div>
-			
+
 			<?php
 				$requirements = [];
 				$requiredPhpVersion = _getComposerRequiredPhpVersion();
@@ -97,7 +97,7 @@
 				</div>
 			</div>
 			@endif
-			
+
 		</div>
 	</div>
 @endsection

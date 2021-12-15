@@ -1,6 +1,6 @@
 @if (isset($topAdvertising) and !empty($topAdvertising))
 	@includeFirst([config('larapen.core.customizedViewPath') . 'home.inc.spacer', 'home.inc.spacer'])
-	<div class="container">
+	<div class="container-fluid">
 		<?php
 		$responsiveClass = (isset($topAdvertising) and $topAdvertising->is_responsive != 1) ? ' d-none d-xl-block d-lg-block d-md-none d-sm-none' : '';
 		?>

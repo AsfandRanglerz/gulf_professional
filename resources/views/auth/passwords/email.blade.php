@@ -18,7 +18,7 @@
 		<div class="h-spacer"></div>
 	@endif
 	<div class="main-container">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 
 				@if (isset($errors) and $errors->any())
@@ -51,7 +51,7 @@
 						</div>
 					</div>
 				@endif
-					
+
 				@if (session('phone'))
 					<div class="col-xl-12">
 						<div class="alert alert-danger">
@@ -60,7 +60,7 @@
 						</div>
 					</div>
 				@endif
-					
+
 				@if (session('login'))
 					<div class="col-xl-12">
 						<div class="alert alert-danger">
@@ -87,11 +87,11 @@
 								<span class="logo-icon"> </span> {{ t('reset_password') }} <span> </span>
 							</h2>
 						</div>
-						
+
 						<div class="card-body">
 							<form id="pwdForm" role="form" method="POST" action="{{ url('password/email') }}">
 								{!! csrf_field() !!}
-								
+
 								<!-- login -->
 								<?php $loginError = (isset($errors) and $errors->has('login')) ? ' is-invalid' : ''; ?>
 								<div class="form-group">
@@ -107,16 +107,16 @@
 										>
 									</div>
 								</div>
-								
+
 								@includeFirst([config('larapen.core.customizedViewPath') . 'layouts.inc.tools.recaptcha', 'layouts.inc.tools.recaptcha'], ['noLabel' => true])
-								
+
 								<!-- Submit -->
 								<div class="form-group">
 									<button id="pwdBtn" type="submit" class="btn btn-primary btn-lg btn-block">{{ t('submit') }}</button>
 								</div>
 							</form>
 						</div>
-						
+
 						<div class="card-footer text-center">
 							<a href="{{ \App\Helpers\UrlGen::login() }}"> {{ t('back_to_the_log_in_page') }} </a>
 						</div>

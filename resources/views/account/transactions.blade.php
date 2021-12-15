@@ -16,20 +16,20 @@
 @section('content')
 	@includeFirst([config('larapen.core.customizedViewPath') . 'common.spacer', 'common.spacer'])
 	<div class="main-container">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
-				
+
 				<div class="col-md-3 page-sidebar">
 					@includeFirst([config('larapen.core.customizedViewPath') . 'account.inc.sidebar', 'account.inc.sidebar'])
 				</div>
 				<!--/.page-sidebar-->
-				
+
 				<div class="col-md-9 page-content">
 					<div class="inner-box">
 						<h2 class="title-2"><i class="icon-money"></i> {{ t('Transactions') }} </h2>
-						
+
 						<div style="clear:both"></div>
-						
+
 						<div class="table-responsive">
 							<table class="table table-bordered">
 								<thead>
@@ -46,11 +46,11 @@
 								<?php
 								if (isset($transactions) && $transactions->count() > 0):
 									foreach($transactions as $key => $transaction):
-										
+
 										// Fixed 2
 										if (empty($transaction->post)) continue;
 										if (!$countries->has($transaction->post->country_code)) continue;
-										
+
 										if (empty($transaction->package)) continue;
 								?>
 								<tr>
@@ -86,17 +86,17 @@
 								</tbody>
 							</table>
 						</div>
-						
+
 						<nav aria-label="">
 							{{ (isset($transactions)) ? $transactions->links() : '' }}
 						</nav>
-						
+
 						<div style="clear:both"></div>
-					
+
 					</div>
 				</div>
 				<!--/.page-content-->
-				
+
 			</div>
 			<!--/.row-->
 		</div>

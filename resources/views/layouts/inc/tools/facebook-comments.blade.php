@@ -1,5 +1,5 @@
 @if (config('settings.single.activation_facebook_comments') and config('services.facebook.client_id') and !$commentsAreDisabledByUser)
-	<div class="container">
+	<div class="container-fluid">
 		<div id="fb-root"></div>
 		<script>
 			(function (d, s, id) {

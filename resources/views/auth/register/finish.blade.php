@@ -16,7 +16,7 @@
 @section('content')
 	@include('common.spacer')
 	<div class="main-container">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 
 				@if (Session::has('flash_notification'))

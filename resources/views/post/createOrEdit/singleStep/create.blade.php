@@ -16,9 +16,9 @@
 @section('content')
 	@includeFirst([config('larapen.core.customizedViewPath') . 'common.spacer', 'common.spacer'])
 	<div class="main-container">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
-				
+
 				@includeFirst([config('larapen.core.customizedViewPath') . 'post.inc.notification', 'post.inc.notification'])
 
 				<div class="col-md-9 page-content">
@@ -26,14 +26,14 @@
 						<h2 class="title-2">
 							<strong><i class="icon-docs"></i> {{ t('post_free_ads') }}</strong>
 						</h2>
-						
+
 						<div class="row">
 							<div class="col-xl-12">
-								
+
 								<form class="form-horizontal" id="postForm" method="POST" action="{{ request()->fullUrl() }}" enctype="multipart/form-data">
 									{!! csrf_field() !!}
 									<fieldset>
-										
+
 										<!-- category_id -->
 										<?php $categoryIdError = (isset($errors) and $errors->has('category_id')) ? ' is-invalid' : ''; ?>
 										<div class="form-group row required">
@@ -48,7 +48,7 @@
 											<input type="hidden" name="category_id" id="categoryId" value="{{ old('category_id', 0) }}">
 											<input type="hidden" name="category_type" id="categoryType" value="{{ old('category_type') }}">
 										</div>
-										
+
 										@if (config('settings.single.show_post_types'))
 											<!-- post_type_id -->
 											@if (isset($postTypes))
@@ -110,8 +110,8 @@
 												<small id="" class="form-text text-muted">{{ t('describe_what_makes_your_ad_unique') }}...</small>
 											</div>
 										</div>
-										
-										
+
+
 										@if (isset($picturesLimit) and is_numeric($picturesLimit) and $picturesLimit > 0)
 											<!-- pictures -->
 											<?php $picturesError = (isset($errors) and $errors->has('pictures')) ? ' is-invalid' : ''; ?>
@@ -144,8 +144,8 @@
 												</div>
 											</div>
 										@endif
-										
-										
+
+
 										<!-- cfContainer -->
 										<div id="cfContainer"></div>
 
@@ -172,7 +172,7 @@
 													   placeholder="{{ t('ei_price') }}"
 													   type="text" value="{!! $price !!}"
 												>
-												
+
 												<div class="input-group-append">
 													<span class="input-group-text">
 														<input id="negotiable" name="negotiable" type="checkbox"
@@ -181,7 +181,7 @@
 												</div>
 											</div>
 										</div>
-										
+
 										<!-- country_code -->
 										<?php $countryCodeError = (isset($errors) and $errors->has('country_code')) ? ' is-invalid' : ''; ?>
 										@if (empty(config('country.code')))
@@ -199,7 +199,7 @@
 										@else
 											<input id="countryCode" name="country_code" type="hidden" value="{{ config('country.code') }}">
 										@endif
-										
+
 										<?php
 										/*
 										@if (\Illuminate\Support\Facades\Schema::hasColumn('posts', 'address'))
@@ -215,7 +215,7 @@
 										@endif
 										*/
 										?>
-										
+
 										@if (config('country.admin_field_active') == 1 and in_array(config('country.admin_type'), ['1', '2']))
 											<!-- admin_code -->
 											<?php $adminCodeError = (isset($errors) and $errors->has('admin_code')) ? ' is-invalid' : ''; ?>
@@ -230,7 +230,7 @@
 												</div>
 											</div>
 										@endif
-									
+
 										<!-- city_id -->
 										<?php $cityIdError = (isset($errors) and $errors->has('city_id')) ? ' is-invalid' : ''; ?>
 										<div id="cityBox" class="form-group row required">
@@ -243,7 +243,7 @@
 												</select>
 											</div>
 										</div>
-										
+
 										<!-- tags -->
 										<?php $tagsError = (isset($errors) and $errors->has('tags')) ? ' is-invalid' : ''; ?>
 										<div class="form-group row">
@@ -259,7 +259,7 @@
 												<small id="" class="form-text text-muted">{{ t('Enter the tags separated by commas') }}</small>
 											</div>
 										</div>
-										
+
 										<!-- is_permanent -->
 										@if (config('settings.single.permanent_posts_enabled') == '3')
 											<input type="hidden" name="is_permanent" id="isPermanent" value="0">
@@ -283,14 +283,14 @@
 												</div>
 											</div>
 										@endif
-										
-										
+
+
 										<div class="content-subheading">
 											<i class="icon-user fa"></i>
 											<strong>{{ t('seller_information') }}</strong>
 										</div>
-										
-										
+
+
 										<!-- contact_name -->
 										<?php $contactNameError = (isset($errors) and $errors->has('contact_name')) ? ' is-invalid' : ''; ?>
 										@if (auth()->check())
@@ -304,7 +304,7 @@
 												</div>
 											</div>
 										@endif
-										
+
 										<?php
 											if (auth()->check()) {
 												$formPhone = (auth()->user()->country_code == config('country.code')) ? auth()->user()->phone : '';
@@ -324,13 +324,13 @@
 												<div class="input-group-prepend">
 													<span id="phoneCountry" class="input-group-text">{!! getPhoneIcon(config('country.code')) !!}</span>
 												</div>
-												
+
 												<input id="phone" name="phone"
 													   placeholder="{{ t('phone_number') }}"
 													   class="form-control input-md{{ $phoneError }}" type="text"
 													   value="{{ phoneFormat(old('phone', $formPhone), old('country', config('country.code'))) }}"
 												>
-												
+
 												<div class="input-group-append">
 													<span class="input-group-text">
 														<input name="phone_hidden" id="phoneHidden" type="checkbox"
@@ -339,7 +339,7 @@
 												</div>
 											</div>
 										</div>
-										
+
 										<!-- email -->
 										<?php $emailError = (isset($errors) and $errors->has('email')) ? ' is-invalid' : ''; ?>
 										<div class="form-group row required">
@@ -352,13 +352,13 @@
 												<div class="input-group-prepend">
 													<span class="input-group-text"><i class="icon-mail"></i></span>
 												</div>
-												
+
 												<input id="email" name="email"
 													   class="form-control{{ $emailError }}" placeholder="{{ t('email') }}" type="text"
 													   value="{{ old('email', ((auth()->check() and isset(auth()->user()->email)) ? auth()->user()->email : '')) }}">
 											</div>
 										</div>
-										
+
 										@if (!auth()->check())
 											@if (in_array(config('settings.single.auto_registration'), [1, 2]))
 												<!-- auto_registration -->
@@ -374,7 +374,7 @@
 																	   type="checkbox"
 																	   checked="checked"
 																>
-																
+
 																<label class="form-check-label" for="auto_registration">
 																	{!! t('I want to register by submitting this ad') !!}
 																</label>
@@ -388,11 +388,11 @@
 												@endif
 											@endif
 										@endif
-										
+
 										@includeFirst([config('larapen.core.customizedViewPath') . 'post.createOrEdit.singleStep.inc.packages', 'post.createOrEdit.singleStep.inc.packages'])
-										
+
 										@includeFirst([config('larapen.core.customizedViewPath') . 'layouts.inc.tools.recaptcha', 'layouts.inc.tools.recaptcha'], ['colLeft' => 'col-md-3', 'colRight' => 'col-md-8'])
-										
+
 										@if (!auth()->check())
 											<!-- accept_terms -->
 											<?php $acceptTermsError = (isset($errors) and $errors->has('accept_terms')) ? ' is-invalid' : ''; ?>
@@ -405,7 +405,7 @@
 															   value="1"
 															   type="checkbox" {{ (old('accept_terms')=='1') ? 'checked="checked"' : '' }}
 														>
-														
+
 														<label class="form-check-label" for="acceptTerms" style="font-weight: normal;">
 															{!! t('accept_terms_label', ['attributes' => getUrlPageByType('terms')]) !!}
 														</label>
@@ -413,7 +413,7 @@
 													<div style="clear:both"></div>
 												</div>
 											</div>
-											
+
 											<!-- accept_marketing_offers -->
 											<?php $acceptMarketingOffersError = (isset($errors) and $errors->has('accept_marketing_offers')) ? ' is-invalid' : ''; ?>
 											<div class="form-group row required">
@@ -425,7 +425,7 @@
 															   value="1"
 															   type="checkbox" {{ (old('accept_marketing_offers')=='1') ? 'checked="checked"' : '' }}
 														>
-														
+
 														<label class="form-check-label" for="acceptMarketingOffers" style="font-weight: normal;">
 															{!! t('accept_marketing_offers_label') !!}
 														</label>
@@ -454,7 +454,7 @@
 				<div class="col-md-3 reg-sidebar">
 					@includeFirst([config('larapen.core.customizedViewPath') . 'post.createOrEdit.inc.right-sidebar', 'post.createOrEdit.inc.right-sidebar'])
 				</div>
-				
+
 			</div>
 		</div>
 	</div>

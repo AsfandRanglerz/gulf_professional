@@ -11,7 +11,7 @@
 			height: 100%;
 			margin: 0;
 		}
-		
+
 		body {
 			background: #efefef;
 			overflow: auto;
@@ -19,7 +19,7 @@
 			font-size: 16px;
 			text-align: center;
 		}
-		
+
 		.button {
 			color: #fff;
 			background-color: #1565C0;
@@ -36,13 +36,13 @@
 			text-align: center;
 			box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
 		}
-		
+
 		.container {
 			max-width: 800px;
 			margin: 0 auto;
 			padding-top: 80px;
 		}
-		
+
 		.panel {
 			background: #fff;
 			box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -50,7 +50,7 @@
 			margin-top: 50px;
 			border-radius: 4px;
 		}
-		
+
 		p {
 			margin: 15px 0 25px 0;
 		}
@@ -69,7 +69,7 @@ try {
 	}
 } catch (\Exception $e) {}
 ?>
-<div class="container">
+<div class="container-fluid">
 	{!! $logoImg !!}
 	<form class="panel" action="{{ url('upgrade/run') }}" method="post">
 		{{ csrf_field() }}

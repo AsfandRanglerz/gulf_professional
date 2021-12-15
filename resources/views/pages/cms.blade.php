@@ -21,15 +21,15 @@
 @section('content')
 	@includeFirst([config('larapen.core.customizedViewPath') . 'common.spacer', 'common.spacer'])
 	<div class="main-container inner-page">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="section-content">
 				<div class="row">
-                    
+
                     @if (empty($page->picture))
                         <h1 class="text-center title-1" style="color: {!! $page->name_color !!};"><strong>{{ $page->name }}</strong></h1>
                         <hr class="center-block small mt-0" style="background-color: {!! $page->name_color !!};">
                     @endif
-                    
+
 					<div class="col-md-12 page-content">
 						<div class="inner-box relative">
 							<div class="row">

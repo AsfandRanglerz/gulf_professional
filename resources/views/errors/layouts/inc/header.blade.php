@@ -16,8 +16,8 @@ if (request()->segment(1) != 'countries') {
 ?>
 <div class="header">
 	<nav class="navbar fixed-top navbar-site navbar-light bg-light navbar-expand-md" role="navigation">
-        <div class="container">
-			
+        <div class="container-fluid">
+
 			<div class="navbar-identity">
 				{{-- Logo --}}
 				<a href="{{ url('/') }}" class="navbar-brand logo logo-title">
@@ -47,7 +47,7 @@ if (request()->segment(1) != 'countries') {
 					@endif
 				@endif
             </div>
-	
+
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-left">
 					{{-- Country Flag --}}
@@ -78,7 +78,7 @@ if (request()->segment(1) != 'countries') {
 						@endif
 					@endif
 				</ul>
-				
+
 				<ul class="nav navbar-nav ml-auto navbar-right">
                     @if (!auth()->check())
                         <li class="nav-item">
@@ -153,7 +153,7 @@ if (request()->segment(1) != 'countries') {
                             </ul>
                         </li>
                     @endif
-	
+
 					<li class="nav-item postadd">
 						@if (!auth()->check())
 							@if (config('settings.single.guests_can_post_ads') != '1')

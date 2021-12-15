@@ -18,7 +18,7 @@
 		<div class="h-spacer"></div>
 	@endif
 	<div class="main-container">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 
 				@if (isset($errors) and $errors->any())
@@ -43,7 +43,7 @@
 						</div>
 					</div>
 				@endif
-				
+
 				@if (
 					config('settings.social_auth.social_login_activation')
 					and (
@@ -90,17 +90,17 @@
 						</div>
 					</div>
 				@endif
-					
+
 				<div class="col-lg-5 col-md-8 col-sm-10 col-xs-12 login-box mt-3">
 					<form id="loginForm" role="form" method="POST" action="{{ url()->current() }}">
 						{!! csrf_field() !!}
 						<input type="hidden" name="country" value="{{ config('country.code') }}">
 						<div class="card card-default">
-							
+
 							<div class="panel-intro text-center">
 								<h2 class="logo-title"><strong>{{ t('log_in') }}</strong></h2>
 							</div>
-							
+
 							<div class="card-body">
 								<?php
 									$loginValue = (session()->has('login')) ? session('login') : old('login');
@@ -121,7 +121,7 @@
 										<input id="login" name="login" type="text" placeholder="{{ getLoginLabel() }}" class="form-control{{ $loginError }}" value="{{ $loginValue }}">
 									</div>
 								</div>
-								
+
 								<!-- password -->
 								<?php $passwordError = (isset($errors) and $errors->has('password')) ? ' is-invalid' : ''; ?>
 								<div class="form-group">
@@ -138,15 +138,15 @@
 										</span>
 									</div>
 								</div>
-								
+
 								@includeFirst([config('larapen.core.customizedViewPath') . 'layouts.inc.tools.recaptcha', 'layouts.inc.tools.recaptcha'], ['noLabel' => true])
-								
+
 								<!-- Submit -->
 								<div class="form-group">
 									<button id="loginBtn" class="btn btn-primary btn-block"> {{ t('log_in') }} </button>
 								</div>
 							</div>
-							
+
 							<div class="card-footer">
 								<label class="checkbox pull-left mt-2 mb-2">
 									<input type="checkbox" value="1" name="remember" id="remember">
@@ -168,7 +168,7 @@
 						</p>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>

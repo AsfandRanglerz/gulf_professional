@@ -18,7 +18,7 @@
 		<div class="h-spacer"></div>
 	@endif
 	<div class="main-container">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 
 				@if (isset($errors) and $errors->any())
@@ -51,7 +51,7 @@
 								<span class="logo-icon"> </span> {{ t('reset_password') }} <span> </span>
 							</h2>
 						</div>
-						
+
 						<div class="card-body">
 							<form method="POST" action="{{ url('password/reset') }}">
 								{!! csrf_field() !!}
@@ -63,30 +63,30 @@
 									<label for="login" class="control-label">{{ t('login') . ' (' . getLoginLabel() . ')' }}:</label>
 									<input type="text" name="login" value="{{ old('login') }}" placeholder="{{ getLoginLabel() }}" class="form-control{{ $loginError }}">
 								</div>
-								
+
 								<!-- password -->
 								<?php $passwordError = (isset($errors) and $errors->has('password')) ? ' is-invalid' : ''; ?>
 								<div class="form-group">
 									<label for="password" class="control-label">{{ t('password') }}:</label>
 									<input type="password" name="password" placeholder="" class="form-control email{{ $passwordError }}">
 								</div>
-								
+
 								<!-- password_confirmation -->
 								<?php $passwordError = (isset($errors) and $errors->has('password')) ? ' is-invalid' : ''; ?>
 								<div class="form-group">
 									<label for="password_confirmation" class="col-form-label">{{ t('Password Confirmation') }}:</label>
 									<input type="password" name="password_confirmation" placeholder="" class="form-control email{{ $passwordError }}">
 								</div>
-							
+
 								@includeFirst([config('larapen.core.customizedViewPath') . 'layouts.inc.tools.recaptcha', 'layouts.inc.tools.recaptcha'], ['noLabel' => true])
-								
+
 								<!-- Submit -->
 								<div class="form-group">
 									<button type="submit" class="btn btn-primary btn-lg btn-block">{{ t('Reset the Password') }}</button>
 								</div>
 							</form>
 						</div>
-						
+
 						<div class="card-footer text-center">
 							<a href="{{ \App\Helpers\UrlGen::login() }}"> {{ t('back_to_the_log_in_page') }} </a>
 						</div>

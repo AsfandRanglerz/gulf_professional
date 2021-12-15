@@ -19,7 +19,7 @@ if (isset($city) and !empty($city)) {
 
 <div class="container-fluid">
 	<div class="search-row-wrapper rounded">
-		<div class="container">
+		<div class="container-fluid">
 			<form id="seach" name="search" action="{{ \App\Helpers\UrlGen::search() }}" method="GET">
 				<div class="row m-0">
 

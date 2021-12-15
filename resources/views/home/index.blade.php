@@ -24,7 +24,7 @@
 		@if (Session::has('flash_notification'))
 			@includeFirst([config('larapen.core.customizedViewPath') . 'common.spacer', 'common.spacer'])
 			<?php $paddingTopExists = true; ?>
-			<div class="container">
+			<div class="container-fluid">
 				<div class="row">
 					<div class="col-xl-12">
 						@include('flash::message')

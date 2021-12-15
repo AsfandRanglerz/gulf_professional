@@ -34,14 +34,14 @@ if (request()->segment(2) == 'create') {
 {{-- {{dd(url($nextStepUrl))}} --}}
 	@includeFirst([config('larapen.core.customizedViewPath') . 'common.spacer', 'common.spacer'])
     <div class="main-container">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-    
+
                 @includeFirst([config('larapen.core.customizedViewPath') . 'post.inc.notification', 'post.inc.notification'])
-                
+
                 <div class="col-md-12 page-content">
                     <div class="inner-box">
-						
+
                         <h2 class="title-2">
 							<strong><i class="icon-camera-1"></i> {{ 'Add your photograph' }}</strong>
 							<?php
@@ -55,14 +55,14 @@ if (request()->segment(2) == 'create') {
 												  data-toggle="tooltip"
 												  data-original-title="' . $post->title . '"
 										>' . \Illuminate\Support\Str::limit($post->title, 45) . '</a>';
-										
+
 										echo $postLink;
 									}
 								}
 							} catch (\Exception $e) {}
 							?>
 						</h2>
-						
+
                         <div class="row">
                             <div class="col-md-12">
                                 <form class="form-horizontal" id="postForm" method="POST" action="{{ request()->fullUrl() }}" enctype="multipart/form-data">
@@ -89,7 +89,7 @@ if (request()->segment(2) == 'create') {
                                         @endif
                                         <div id="uploadError" class="mt-2" style="display: none;"></div>
                                         <div id="uploadSuccess" class="alert alert-success fade show mt-2" style="display: none;"></div>
-										
+
 										{{-- button --}}
                                         <div class="form-group row mt-4">
                                             <div class="col-md-12 text-center">
@@ -97,10 +97,10 @@ if (request()->segment(2) == 'create') {
                                                     <a href="{{ url('posts/' . $post->id . '/edit') }}" class="btn btn-default btn-lg">{{ t('Previous') }}</a>
                                                     <a id="nextStepAction" href="{{ $nextStepUrl }}" class="btn btn-default btn-lg">{{ t('Skip') }}</a>
                                                 @endif
-                                                
+
                                             </div>
                                         </div>
-                                    	
+
                                     </fieldset>
                                 </form>
                             </div>
@@ -190,14 +190,14 @@ if (request()->segment(2) == 'create') {
                     <?php
 					// Get the file path
 					$filePath = $post->pictures->get($i)->filename;
-					
+
                     // Get the file's deletion URL
                     if (request()->segment(2) == 'create') {
                         $initialPreviewConfigUrl = url('posts/create/' . $post->tmp_token . '/photos/' . $post->pictures->get($i)->id . '/delete');
                     } else {
                         $initialPreviewConfigUrl = url('posts/' . $post->id . '/photos/' . $post->pictures->get($i)->id . '/delete');
                     }
-                    
+
                     // Get the file size
 					try {
 						$fileSize = (isset($disk) && $disk->exists($filePath)) ? (int)$disk->size($filePath) : 0;
@@ -214,10 +214,10 @@ if (request()->segment(2) == 'create') {
                 @endfor
                 ],
                 @endif
-				
+
                 elErrorContainer: '#uploadError',
 				msgErrorClass: 'alert alert-block alert-danger',
-				
+
 				uploadClass: 'btn btn-success'
             });
         @endif
@@ -235,15 +235,15 @@ if (request()->segment(2) == 'create') {
 					return true;
 				}
 			}
-			
+
 			return false;
 		});
-		
+
 		/* Show upload status message */
         $('#pictureField').on('filebatchpreupload', function(event, data, id, index) {
             $('#uploadSuccess').html('<ul></ul>').hide();
         });
-		
+
 		/* Show success upload message */
         $('#pictureField').on('filebatchuploadsuccess', function(event, data, previewId, index) {
             /* Show uploads success messages */
@@ -256,10 +256,10 @@ if (request()->segment(2) == 'create') {
             });
             $('#uploadSuccess ul').append(out);
             $('#uploadSuccess').fadeIn('slow');
-            
+
             /* Change button label */
             $('#nextStepAction').html('{{ $nextStepLabel }}').removeClass('btn-default').addClass('btn-primary');
-            
+
             /* Check redirect */
             var maxFiles = {{ (isset($picturesLimit)) ? (int)$picturesLimit : 1 }};
             var oldFiles = {{ (isset($post) and isset($post->pictures)) ? $post->pictures->count() : 0 }};
@@ -270,12 +270,12 @@ if (request()->segment(2) == 'create') {
 				redirect(nextStepUrl);
             }
         });
-		
+
 		/* Reorder (Sort) files */
 		$('#pictureField').on('filesorted', function(event, params) {
 			picturesReorder(params);
 		});
-		
+
 		/* Delete picture */
         $('#pictureField').on('filepredelete', function(jqXHR) {
             var abort = true;
@@ -295,9 +295,9 @@ if (request()->segment(2) == 'create') {
 			if (typeof params.stack === 'undefined') {
 				return false;
 			}
-			
+
 			waitingDialog.show('{{ t('Processing') }}...');
-	
+
 			$.ajax({
 				method: 'POST',
 				url: siteUrl + '/ajax/post/pictures/reorder',
@@ -306,27 +306,27 @@ if (request()->segment(2) == 'create') {
 					'_token': $('input[name=_token]').val()
 				}
 			}).done(function(data) {
-				
+
 				setTimeout(function() {
 					waitingDialog.hide();
 				}, 200);
-				
+
 				if (typeof data.status === 'undefined') {
 					return false;
 				}
-		
+
 				/* Reorder Notification */
 				if (parseInt(data.status) === 1) {
 					$('#uploadSuccess').html('<ul></ul>').hide();
 					$('#uploadSuccess ul').append('{{ t('Your picture has been reorder successfully') }}');
 					$('#uploadSuccess').fadeIn('slow');
 				}
-		
+
 				return false;
 			});
-	
+
 			return false;
 		}
     </script>
-    
+
 @endsection

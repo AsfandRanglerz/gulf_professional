@@ -24,7 +24,7 @@
 @section('content')
 	@includeFirst([config('larapen.core.customizedViewPath') . 'common.spacer', 'common.spacer'])
 	<div class="main-container inner-page">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="section-content">
 				<div class="row">
 
@@ -36,9 +36,9 @@
 					@if (isset($countryCols))
 						<div class="col-md-12 page-content">
 							<div class="inner-box relative">
-								
+
 								<h3 class="title-2"><i class="icon-location-2"></i> {{ t('select_a_country') }}</h3>
-								
+
 								<div class="row m-0">
 									@if (!empty($countryCols))
 										@foreach ($countryCols as $key => $col)
@@ -66,7 +66,7 @@
 										</div>
 									@endif
 								</div>
-								
+
 							</div>
 						</div>
 					@endif

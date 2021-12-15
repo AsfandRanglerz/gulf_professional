@@ -1,7 +1,7 @@
 <div class="header">
 	<nav class="navbar fixed-top navbar-site navbar-light bg-light navbar-expand-md" role="navigation">
-		<div class="container">
-			
+		<div class="container-fluid">
+
 			<div class="navbar-identity">
 				{{-- Logo --}}
 				<a href="{{ url('/') }}" class="navbar-brand logo logo-title">
@@ -15,18 +15,18 @@
 							}
 						}
 					} catch (\Exception $e) {}
-					
+
 					// Print Logo
 					echo $logoImg;
 					?>
 				</a>
 			</div>
-			
+
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-left"></ul>
 				<ul class="nav navbar-nav ml-auto navbar-right"></ul>
 			</div>
-			
+
 		</div>
 	</nav>
 </div>

@@ -16,7 +16,7 @@
 @section('content')
 	@includeFirst([config('larapen.core.customizedViewPath') . 'common.spacer', 'common.spacer'])
 	<div class="main-container">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 
 				@if (Session::has('flash_notification'))
@@ -92,13 +92,13 @@
 																</a>
 															</div>
 														</div>
-														
+
 														<div class="col-md-8 add-desc-box">
 															<div class="items-details">
 																<h5 class="add-title">
 																	<a href="{{ \App\Helpers\UrlGen::post($post) }}"> {{ $post->title }} </a>
 																</h5>
-																
+
 																<span class="info-row">
 																	@if (isset($post->postType) and !empty($post->postType))
 																		<span class="add-type business-ads tooltipHere"
@@ -134,7 +134,7 @@
 																</span>
 															</div>
 														</div>
-		
+
 														<div class="col-md-2 text-right text-center-xs price-box">
 															<h4 class="item-price">
 																{!! \App\Helpers\Number::money($post->price) !!}
@@ -154,9 +154,9 @@
                                         </div>
                                     @endif
 								</div>
-								
+
 								<div style="clear:both;"></div>
-								
+
 								<nav class="pagination-bar mb-4" aria-label="">
                                     <?php
 									if (isset($posts)) {

@@ -23,7 +23,7 @@
         <div class="h-spacer"></div>
     @endif
     <div class="main-container inner-page">
-        <div class="container">
+        <div class="container-fluid">
             <div class="section-content">
                 <div class="row">
 

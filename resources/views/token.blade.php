@@ -16,7 +16,7 @@
 @section('content')
 	@includeFirst([config('larapen.core.customizedViewPath') . 'common.spacer', 'common.spacer'])
 	<div class="main-container">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 
 				@if (isset($errors) and $errors->any())
@@ -50,7 +50,7 @@
 						</div>
 					</div>
 				@endif
-					
+
 				<div class="col-xl-12">
 					<div class="alert alert-info">
 						{{ getTokenMessage() }}:
@@ -62,11 +62,11 @@
 						<div class="panel-intro text-center">
 							<h2 class="logo-title"><strong>{{ t('Code') }}</strong></h2>
 						</div>
-						
+
 						<div class="card-body">
 							<form id="tokenForm" role="form" method="POST" action="{{ url(getRequestPath('verify/.*')) }}">
 								{!! csrf_field() !!}
-								
+
 								<!-- code -->
 								<?php $codeError = (isset($errors) and $errors->has('code')) ? ' is-invalid' : ''; ?>
 								<div class="form-group">
@@ -83,13 +83,13 @@
 										>
 									</div>
 								</div>
-								
+
 								<div class="form-group">
 									<button id="tokenBtn" type="submit" class="btn btn-primary btn-lg btn-block">{{ t('submit') }}</button>
 								</div>
 							</form>
 						</div>
-						
+
 						<div class="card-footer text-center">
 							&nbsp;
 						</div>

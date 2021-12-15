@@ -21,9 +21,9 @@
 @section('content')
 	@includeFirst([config('larapen.core.customizedViewPath') . 'common.spacer', 'common.spacer'])
 	<div class="main-container">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row clearfix">
-				
+
 				@if (isset($errors) and $errors->any())
 					<div class="col-xl-12">
 						<div class="alert alert-danger">
@@ -47,7 +47,7 @@
 						</div>
 					</div>
 				@endif
-				
+
 				<div class="col-md-12">
 					<div class="contact-form">
 						<h5 class="list-title gray mt-0">
@@ -96,7 +96,7 @@
 											<textarea class="form-control{{ $messageError }}" id="message" name="message" placeholder="{{ t('Message') }}"
 													  rows="7">{{ old('message') }}</textarea>
 										</div>
-										
+
 										@includeFirst([config('larapen.core.customizedViewPath') . 'layouts.inc.tools.recaptcha', 'layouts.inc.tools.recaptcha'])
 
 										<div class="form-group">

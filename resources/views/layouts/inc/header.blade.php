@@ -1217,8 +1217,8 @@ if (request()->segment(1) != 'countries') {
 {{-- Header backup till the date of 12/13/2021 --}}
 {{--<div class="header">
 	<nav class="navbar fixed-top navbar-site navbar-light bg-light navbar-expand-md" role="navigation">
-		<div class="container">
-			
+		<div class="container-fluid">
+
 			<div class="navbar-identity">
 				 Logo
 				<a href="{{ url('/') }}" class="navbar-brand logo logo-title">
@@ -1251,7 +1251,7 @@ if (request()->segment(1) != 'countries') {
 					@endif
 				@endif
 			</div>
-			
+
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-left">
 					 Country Flag
@@ -1296,7 +1296,7 @@ if (request()->segment(1) != 'countries') {
 							$addListingAttr = '';
 						}
 					?>
-				
+
 				<ul class="nav navbar-nav ml-auto navbar-right">
 					@if (!auth()->check())
 						<li class="nav-item">
@@ -1310,10 +1310,10 @@ if (request()->segment(1) != 'countries') {
 							<a href="{{ \App\Helpers\UrlGen::register() }}" class="nav-link"><i class="icon-user-add fa"></i> {{ t('register') }}</a>
 							 <a href="{{ $addListingUrl }}" class="nav-link"><i class="icon-user-add fa"></i> {{ t('register') }}</a>
 							<a href="{{url('create-1')}}" class="nav-link"><i class="icon-user-add fa"></i> {{ t('register') }}</a>
-							
+
 						</li>
 					@else
-					
+
 						<li class="nav-item hidden-sm">
 							@if (app('impersonate')->isImpersonating())
 								<a href="{{ route('impersonate.leave') }}" class="nav-link">
@@ -1324,7 +1324,7 @@ if (request()->segment(1) != 'countries') {
 								<a href="{{ \App\Helpers\UrlGen::logout() }}" class="nav-link">
 									<i class="icon-logout hidden-sm"></i> {{ t('log_out') }}
 								</a>
-							@endif	
+							@endif
 							@endif
 						</li>
 						<li class="nav-item dropdown no-arrow">
@@ -1364,13 +1364,13 @@ if (request()->segment(1) != 'countries') {
 							</ul>
 							@endif
 						</li>
-						
+
 					@endif
-					
+
 					@if (config('plugins.currencyexchange.installed'))
 						@include('currencyexchange::select-currency')
 					@endif
-					
+
 					@if (config('settings.single.pricing_page_enabled') == '2')
 						<li class="nav-item pricing">
 							<a href="{{ \App\Helpers\UrlGen::pricing() }}" class="nav-link">
@@ -1378,10 +1378,10 @@ if (request()->segment(1) != 'countries') {
 							</a>
 						</li>
 					@endif
-					
-					
+
+
 					 {{dd(\Auth::user())}}
-					
+
 					@if(\Auth::user())
 					@if(\Auth::user()->is_admin == 0)
 					@if(count(\Auth::user()->posts) == 0)
@@ -1415,15 +1415,15 @@ if (request()->segment(1) != 'countries') {
 					@endif
 
 
-								
-							
-					
+
+
+
 					@includeFirst([config('larapen.core.customizedViewPath') . 'layouts.inc.menu.select-language', 'layouts.inc.menu.select-language'])
-					
+
 				</ul>
 			</div>
-			
-			
+
+
 		</div>
 	</nav>
 </div>--}}

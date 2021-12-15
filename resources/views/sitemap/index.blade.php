@@ -20,7 +20,7 @@
 @section('content')
 	@includeFirst([config('larapen.core.customizedViewPath') . 'common.spacer', 'common.spacer'])
 	<div class="main-container inner-page">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="section-content">
 				<div class="row">
 
@@ -40,11 +40,11 @@
 							</div>
 						</div>
 					@endif
-					
+
 					@includeFirst([config('larapen.core.customizedViewPath') . 'home.inc.spacer', 'home.inc.spacer'])
 					<h1 class="text-center title-1"><strong>{{ t('sitemap') }}</strong></h1>
 					<hr class="center-block small mt-0">
-						
+
 					<div class="col-xl-12">
 						<div class="content-box">
 							<div class="row-featured-category">
@@ -53,18 +53,18 @@
 										<span class="title-3" style="font-weight: bold;">{{ t('list_of_categories_and_sub_categories') }}</span>
 									</h2>
 								</div>
-								
+
 								<div class="col-xl-12">
 									<div class="list-categories-children styled">
 										<div class="row">
 											@foreach ($cats as $key => $col)
 												<div class="col-md-4 col-sm-4 {{ (count($cats) == $key+1) ? 'last-column' : '' }}">
 													@foreach ($col as $iCat)
-														
+
 														<?php
 															$randomId = '-' . substr(uniqid(rand(), true), 5, 5);
 														?>
-														
+
 														<div class="cat-list">
 															<h3 class="cat-title rounded">
 																<a href="{{ \App\Helpers\UrlGen::category($iCat) }}">
@@ -117,7 +117,7 @@
 											</h2>
 										</div>
 									</div>
-									
+
 									<div class="col-xl-12">
 										<div class="list-categories-children">
 											<div class="row">
@@ -141,9 +141,9 @@
 					@endif
 
 				</div>
-				
+
 				@includeFirst([config('larapen.core.customizedViewPath') . 'layouts.inc.social.horizontal', 'layouts.inc.social.horizontal'])
-				
+
 			</div>
 		</div>
 	</div>

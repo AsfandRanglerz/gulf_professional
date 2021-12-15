@@ -16,9 +16,9 @@
 @section('content')
 	@includeFirst([config('larapen.core.customizedViewPath') . 'common.spacer', 'common.spacer'])
 	<div class="main-container">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row clearfix">
-				
+
 				@if (isset($errors) and $errors->any())
 					<div class="col-md-12">
 						<div class="alert alert-danger">
@@ -32,16 +32,16 @@
 						</div>
 					</div>
 				@endif
-					
+
 				<div class="col-md-12">
 					<div class="contact-form">
-						
+
 						<h3 class="gray mt-0">
 							<strong><a href="{{ \App\Helpers\UrlGen::post($post) }}">{{ $title }}</a></strong>
 						</h3>
 						<hr class="mt-1">
 						<h4>{{ t('There is something wrong with this ad') }}</h4>
-		
+
 						<form role="form" method="POST" action="{{ url('posts/' . $post->id . '/report') }}">
 							{!! csrf_field() !!}
 							<fieldset>
@@ -58,7 +58,7 @@
 										@endforeach
 									</select>
 								</div>
-								
+
 								<!-- email -->
 								@if (auth()->check() and isset(auth()->user()->email))
 									<input type="hidden" name="email" value="{{ auth()->user()->email }}">
@@ -74,19 +74,19 @@
 										</div>
 									</div>
 								@endif
-							
+
 								<!-- message -->
 								<?php $messageError = (isset($errors) and $errors->has('message')) ? ' is-invalid' : ''; ?>
 								<div class="form-group required">
 									<label for="message" class="control-label">{{ t('Message') }} <sup>*</sup> <span class="text-count"></span></label>
 									<textarea id="message" name="message" class="form-control{{ $messageError }}" rows="10">{{ old('message') }}</textarea>
 								</div>
-								
+
 								@includeFirst([config('larapen.core.customizedViewPath') . 'layouts.inc.tools.recaptcha', 'layouts.inc.tools.recaptcha'], ['label' => true])
-			
+
 								<input type="hidden" name="post_id" value="{{ $post->id }}">
 								<input type="hidden" name="abuseForm" value="1">
-								
+
 								<div class="form-group">
 									<a href="{{ rawurldecode(URL::previous()) }}" class="btn btn-default btn-lg">{{ t('Back') }}</a>
 									<button type="submit" class="btn btn-primary btn-lg">{{ t('Send Report') }}</button>
@@ -95,7 +95,7 @@
 						</form>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>

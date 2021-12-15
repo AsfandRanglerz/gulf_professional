@@ -16,9 +16,9 @@
 @section('content')
 	@includeFirst([config('larapen.core.customizedViewPath') . 'common.spacer', 'common.spacer'])
 	<div class="main-container">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
-				
+
 				@if (Session::has('flash_notification'))
 					<div class="col-xl-12">
 						<div class="row">
@@ -29,7 +29,7 @@
 					</div>
 				@endif
 
-				
+
 				<div class="col-md-3 page-sidebar">
 					@includeFirst([config('larapen.core.customizedViewPath') . 'account.inc.sidebar', 'account.inc.sidebar'])
 				</div>
@@ -44,7 +44,7 @@
 							<h5><strong>Oops ! An error has occurred.</strong></h5>
 							<ul class="list list-check">
 								<li>{{\Session::get('pass_error')}}</li>
-								
+
 							</ul>
 						</div>
 					</div>
@@ -89,13 +89,13 @@
 													   type="checkbox"
 													   name="close_account_confirmation"
 													   id="closeAccountConfirmation1"
-													   value="1" 
+													   value="1"
 													   required
 												> I have read the message and fully understand the consequences of closing my account
 											</label>
 										</div>
-										
-										
+
+
 										{{-- <div class="form-check form-check-inline pt-2">
 											<label class="form-check-label">
 												<input class="form-check-input"
@@ -108,7 +108,7 @@
 										</div> --}}
 									</div>
 								</div>
-								
+
 								<div class="form-group row">
 									<div class="col-md-12">
 										<button type="submit" class="btn btn-primary">{{ t('submit') }}</button>

@@ -16,20 +16,20 @@
 @section('content')
 	@includeFirst([config('larapen.core.customizedViewPath') . 'common.spacer', 'common.spacer'])
     <div class="main-container">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                
+
                 <div class="col-md-3 page-sidebar">
                     @includeFirst([config('larapen.core.customizedViewPath') . 'account.inc.sidebar', 'account.inc.sidebar'])
                 </div>
                 <!--/.page-sidebar-->
-                
+
                 <div class="col-md-9 page-content">
                     <div class="inner-box">
                         <h2 class="title-2">
                             <i class="icon-mail"></i> {{ t('inbox') }}
                         </h2>
-                        
+
                         @if (session()->has('flash_notification'))
                             <div class="row">
                                 <div class="col-xl-12">
@@ -37,18 +37,18 @@
                                 </div>
                             </div>
                         @endif
-                        
+
                         <div id="successMsg" class="alert alert-success hide" role="alert"></div>
                         <div id="errorMsg" class="alert alert-danger hide" role="alert"></div>
-                        
+
                         <div class="inbox-wrapper">
                             <div class="row">
                                 <div class="col-md-3 col-lg-2">
                                     <div class="btn-group hidden-sm"></div>
                                 </div>
-                                
+
                                 <div class="col-md-9 col-lg-10">
-                                    
+
                                     <div class="btn-group mobile-only-inline">
                                         <a href="#" class="btn btn-primary text-uppercase">
                                             <i class="fas fa-pen"></i>
@@ -60,11 +60,11 @@
                                                 <input type="checkbox" id="form-check-all">
                                             </div>
                                         </button>
-                                        
+
                                         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
                                             <span class="dropdown-menu-sort-selected">{{ t('action') }}</span>
                                         </button>
-    
+
                                         {!! csrf_field() !!}
                                         <ul id="groupedAction" class="dropdown-menu dropdown-menu-sort" role="menu">
                                             <li class="dropdown-item">
@@ -94,11 +94,11 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    
+
                                     <button type="button" id="btnRefresh" class="btn btn-secondary hidden-sm" data-toggle="tooltip" title="{{ t('refresh') }}">
                                         <span class="fas fa-sync-alt"></span>
                                     </button>
-                                    
+
                                     <div class="btn-group hidden-sm">
                                         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
                                             {{ t('more') }}
@@ -109,26 +109,26 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    
+
                                     <div class="message-tool-bar-right pull-right" id="linksThreads">
-                                        
+
                                         @include('account.messenger.threads.links')
-                                        
+
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <hr>
-                            
+
                             <div class="row">
                                 @include('account.messenger.partials.sidebar')
-                                
+
                                 <div class="col-md-9 col-lg-10">
                                     <div class="message-list">
                                         <div id="listThreads">
-                                            
+
                                             @include('account.messenger.threads.threads')
-                                            
+
                                         </div>
                                     </div>
                                 </div>

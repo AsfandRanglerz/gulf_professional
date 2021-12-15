@@ -20,7 +20,7 @@
 
 @section('content')
 	<div class="main-container">
-		
+
 		@includeFirst([config('larapen.core.customizedViewPath') . 'search.inc.breadcrumbs', 'search.inc.breadcrumbs'])
 		@includeFirst([config('larapen.core.customizedViewPath') . 'search.inc.categories', 'search.inc.categories'])
 		<?php if (\App\Models\Advertising::where('slug', 'top')->count() > 0): ?>
@@ -34,8 +34,8 @@
 		endif;
 		?>
 		@includeFirst([config('larapen.core.customizedViewPath') . 'common.spacer', 'common.spacer'])
-		
-		<div class="container">
+
+		<div class="container-fluid">
 			<div class="row">
 
 				<!-- Sidebar -->
@@ -110,7 +110,7 @@
 									@endif
 								@endif
 							</ul>
-							
+
 							{{-- <div class="tab-filter">
 								<select id="orderBy" title="sort by" class="niceselecter select-sort-by" data-style="btn-select" data-width="auto">
 									<option value="{!! qsUrl(request()->url(), request()->except(['orderBy', 'distance']), null, false) !!}">{{ t('Sort by') }}</option>
@@ -158,7 +158,7 @@
 								</div>
                                 <div style="clear:both;"></div>
 							</div>
-                            
+
 							@if (isset($posts) and $posts->count() > 0)
 								<div class="pull-right col-xs-6 text-right listing-view-action">
 									<span class="list-view"><i class="icon-th"></i></span>
@@ -169,7 +169,7 @@
 
 							<div style="clear:both"></div>
 						</div>
-						
+
 						<!-- Mobile Filter Bar -->
 						<div class="mobile-filter-bar col-xl-12">
 							<ul class="list-unstyled list-inline no-margin no-padding">
@@ -251,7 +251,7 @@
 							@endif
 						</div>
 					</div>
-					
+
 					<nav class="pagination-bar mb-5 pagination-sm" aria-label="">
 						{!! $posts->appends(request()->query())->links() !!}
 					</nav>
@@ -268,7 +268,7 @@
 					</div>
 
 				</div>
-				
+
 				<div style="clear:both;"></div>
 
 				<!-- Advertising -->
@@ -296,7 +296,7 @@
 				redirect(goToUrl);
 			});
 		});
-		
+
 		@if (config('settings.optimization.lazy_loading_activation') == 1)
 		$(document).ready(function () {
 			$('#postsList').each(function () {
