@@ -20,7 +20,371 @@ if (
 	$colClass4 = 'col-lg-4 col-md-4 col-sm-4 col-xs-12';
 }
 ?>
-<footer class="main-footer">
+<div class="footer">
+	<style type="text/css" media="screen">
+		.welcome-text-below2 {
+			padding: 0px 0;
+			border: 1px solid #999;
+			background: #ff7c19;
+			color: #fff;
+		}
+
+		.welcome-content-below2 h5 {
+			text-transform: inherit;
+			font-size: 18px;
+			font-family: Arial;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		.footer {
+			padding: 0;
+		}
+
+		#footer {
+			padding: 0;
+			position: relative;
+		    background: #096791;
+		}
+
+		.footer-inner {
+			padding: 25px 30px!important;
+			overflow: hidden;
+		}
+
+		.footer_bottom_li {
+			margin-top: 5px;
+			list-style-type: none;
+			margin-left: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+
+		.footer_bottom_li li {
+			float: left;
+		}
+
+		.footer_bottom_li li a {
+			display: block;
+			color: unset;
+			text-align: center;
+			padding-right: 5px;
+			margin-right: 3px;
+			text-decoration: underline;
+			background-color: unset;
+			font-size: 12px;
+			font-weight: bold;
+		}
+	
+		.footer_bottom_li li a:hover {
+			background-color: unset;
+			color: #ff7c19;
+		}
+
+		.welcome-content-below2 h5 {
+			padding: 0 15px;
+		}
+
+		#footer .widget-description {
+			margin: 0;
+			color: #fff;
+		}
+
+		#footer .widget-description p {
+			margin: unset;
+			height: auto;
+			overflow: hidden;
+			line-height: 19px;
+			padding-bottom: 1%;
+			text-align: justify;
+		}
+
+		#footer .quick_links li a {
+			margin-bottom: 5px;
+			display: block;
+			color: #fff;
+			word-spacing: 5px;
+			font-size: 14px;
+		}
+
+		#footer .quick_links li a:hover {
+			color: #ff7c19;
+		}
+
+		#footer .footer-copyrights {
+			padding: 5px 15px;
+		    background: #a9a9a9;
+		}
+
+		#footer .footer-copyrights p {
+			padding: 5px 0;
+			margin: 0;
+			color: #000;
+		}
+
+		.custom-list {
+			padding: 0;
+			margin: 0;
+		}
+
+		#footer .footer-copyrights .social li {
+			float: left;
+			margin-left: 5px;
+		}
+
+		#footer .footer-copyrights .social li .icon {
+			color: #FFF;
+		}
+		
+		#footer .footer-copyrights .social li a:hover {
+			background: #FFF;
+		}
+
+		.facebook, .twitter, .google-plus, .pinterest, .linkedin, .dribbble {
+			display: inline-block;
+			width: 25px;
+			height: 25px;
+			text-align: center;
+			line-height: 25px;
+		}
+
+		.facebook {
+			background: #3b5999;
+			border: 1px solid #3b5999;
+		}
+
+		.facebook:hover .icon {
+			color: #3b5999!important;
+		}
+
+		.google-plus {
+			background: #dd4b39;
+			border: 1px solid #dd4b39;
+		}
+
+		.google-plus:hover .icon {
+			color: #dd4b39!important;
+		}
+
+		.twitter {
+			background: #55acee;
+			border: 1px solid #55acee;
+		}
+
+		.twitter:hover .icon {
+			color: #55acee!important;
+		}
+
+		.linkedin {
+			background: #0073b2;
+			border: 1px solid #0073b2;
+		}
+
+		.linkedin:hover .icon {
+			color: #0073b2!important;
+		}
+
+		#footer .widget-title {
+			text-transform: capitalize;
+			color: #fff;
+			font-weight: bold;
+			font-size: 18px;
+		}
+
+		@media  only screen and (max-width: 1199px) {
+			.footer-top h5,
+			.welcome-content-below2 h5 {
+				font-size: 14px!important;
+			}
+
+			#footer .widget-description p,
+			#footer .footer-copyrights p {
+				margin: unset;
+				font-size: 13px!important;
+			}
+
+			#footer .quick_links li a {
+				font-size: 12px!important;
+			}
+
+			.footer_bottom_li li a span {
+				font-size: 11px!important;
+			}
+		}
+
+		@media  only screen and (max-width: 991px) {
+			#footer .widget-title {
+				margin: 12px 0;
+				padding: 0;
+			}
+
+			.footer_bottom_li {
+				margin: 10px 0;
+			}
+
+			.footer-inner {
+				padding: 8px 0 16px 0!important;
+			}
+		}
+
+		@media (max-width: 767px) {
+			.footer ul {
+				text-align: left;
+				margin: 10px 0!important;
+			}
+		}
+
+		@media  only screen and (max-width: 575px) {
+			#footer .footer-copyrights {
+				padding-top: 8px;
+				padding-bottom: 12px;
+				text-align: center;
+			}
+
+			ul.social.pull-right.custom-list {
+				margin: 0!important;
+				display: flex;
+				justify-content: center;
+			}
+
+			.footer-top h5,
+			.welcome-content-below2 h5 {
+				font-size: 13px!important;
+			}
+
+			#footer .widget-description p,
+			#footer .footer-copyrights p {
+				margin: unset;
+				font-size: 12px!important;
+			}
+
+			#footer .quick_links li a {
+				font-size: 11px!important;
+			}
+
+			.footer-top .col-md-4,
+			.footer-top .col-md-8 {
+				padding-left: 5px;
+				padding-right: 5px;
+			}
+		}
+	</style>
+	<div class="welcome-text-below2">
+		<div class="css-table">
+			<div class="css-table-cell">
+				<div class="welcome-content-below2" align="center">
+
+					<h5><strong>Gulf Lab EXPO - Online Expo for Clinical Lab Equipment, Products and Services for MENA Region</strong></h5>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- End Footer -->
+
+
+	<!-- End Back-To-Top Button -->
+	<footer id="footer">
+		<div class="container-fluid footer-inner">
+			<div class="m-0 row">
+
+				<!-- Start Footer-Top -->
+				<div class="footer-top">
+					<div class="mx-0 row">
+						<div class="col-md-4 pl-0">
+							<div class="widget pl-lg-0 col-lg-12 col-sm-12 col-xs-12">
+								<h5 class="widget-title">Gulf Lab EXPO</h5>
+								<div class="widget-description">
+									<p>Gulf Lab EXPO is an Online EXPO and Marketplace for Clinical Lab Products, Equipment and Services for the MENA (Middle East North Africa) region. Visitors can find lab products and get one-click access to suppliers and distributors for MENA region. Members can create a professional profile to network and exchange knowledge with other lab professionals in MENA, post and search classifieds for lab jobs, products and support services, and get latest news on advances in the clinical lab industry.</p>
+									<ul class="footer_bottom_li">
+
+										<li> <a href="#"> <span class="caption">Terms of Use</span> </a> </li>
+										<li> <a href="https://gulflabexpo.com/privacy-policy"> <span class="caption">Privacy Policy</span> </a> </li>
+										<li> <a href="https://gulflabexpo.com/advertisement"> <span class="caption">Advertise with us</span> </a> </li>
+										<li> <a href="#"> <span class="caption">Site Map</span> </a> </li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-8 row mx-0 p-0">
+							<div class="widget col-sm-3 col-xs-12">
+								<h5 class="widget-title">Online Exhibition</h5>
+								<ul class="quick_links custom-list">
+									<li><a href="#">Search Products</a></li>
+									<li><a href="#">Search Company</a></li>
+									<li><a href="#">Search Distributors</a></li>
+									<li><a href="https://gulflabexpo.com/reqistrationFlow?flow=2">Register Company</a></li>
+								</ul>
+							</div>
+
+							<div class="widget col-sm-3 col-xs-12">
+								<h5 class="widget-title">Networking</h5>
+								<ul class="quick_links custom-list">
+									<li><a href="#">Create Your Profile</a></li>
+									<li><a href="#">Find a Professional</a></li>
+									<li><a href="#">Post a Question</a></li>
+									<li><a href="#">Join a Discussion</a></li>
+								</ul>
+							</div>
+							<div class="widget col-sm-3 col-xs-12">
+								<h5 class="widget-title">Classifieds</h5>
+								<ul class="quick_links custom-list">
+									<li><a href="#">Post an Ad</a></li>
+									<li><a href="#">Find a Job</a></li>
+									<li><a href="#">Find a Product</a></li>
+									<li><a href="#">Find a Service</a></li>
+								</ul>
+							</div>
+							<div class="widget col-sm-3 col-xs-12">
+								<h5 class="widget-title">Industry News</h5>
+								<ul class="quick_links custom-list">
+									<li><a href="#">Latest News</a></li>
+									<li><a href="#">Get News through Email</a></li>
+									<li><a href="#">Submit Press Release</a></li>
+									<li><a href="#">Submit News/Article</a></li>
+									<!--                                <li><a href="#">Create Your Profile</a></li>
+                                                                    <li><a href="#">Find a Professional</a></li>
+                                                                    <li><a href="#">Post a Question</a></li>
+                                                                    <li><a href="#">Join a Discussion</a></li>-->
+								</ul>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<!-- End Footer-Top -->
+
+			</div>
+		</div>
+		<!-- End Container -->
+
+		<!-- Start Footer Copyrights -->
+
+		<div class="footer-copyrights">
+			<div class="row mx-0">
+
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<p> © <?php echo date('Y'); ?> Gulf Lab Expo  - All Rights Reserved</p>
+				</div>
+
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="margin-top:3px;">
+					<ul class="social pull-right custom-list">
+						<li><a href="https://www.facebook.com/" class="facebook" target="_blank"><span class="icon-facebook icon"></span></a></li>
+						<li><a href="https://plus.google.com/" class="google-plus" target="_blank"><spani class="fab fa-google-plus icon"></span></a></li>
+						<li><a href="https://twitter.com/" class="twitter" target="_blank"><span class="icon-twitter-bird icon"></span></a></li>
+						<li><a href="https://www.linkedin.com/" class="linkedin" target="_blank"><span class="icon-linkedin icon"></span></a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<!-- End Footer Copyrights -->
+
+	</footer>
+
+</div>
+<!-- <footer class="main-footer">
 	<div class="footer-content">
 		<div class="container-fluid">
 			<div class="row">
@@ -232,7 +596,7 @@ if (
 			</div>
 		</div>
 	</div>
-</footer>
+</footer> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $(function () {

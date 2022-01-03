@@ -640,7 +640,7 @@ if (request()->segment(1) != 'countries') {
 		margin-bottom: 0;
 		color: #a09c9c;
 		font-weight: bold;
-		font-size: 14px;
+		font-size: 15px;
 	}
 
 	.navbar-left {
@@ -1157,12 +1157,12 @@ if (request()->segment(1) != 'countries') {
 				</div>
 				<div class="col-lg-6 col-md-12 header-upper-inner2 px-0">
 					<ul class="nav navbar-nav main-nav">
-						<li class="online-expo"><a href="#">Online EXPO</a></li>
-						<li class="lab-news"><a href="#">Lab News</a></li>
-						<li class="classified active"><a href="#">Classifieds</a></li>
-						<li class="ask-advice"><a href="#">Ask/Advise</a></li>
-					</ul>
-					<p class="middle-txt">Middle East’s Online Expo for Clinical Lab Equipment, Products and Services</p>
+                        <li class="online-expo"><a href="https://gulflabexpo.com/online/expo">Online Exhibition</a></li>
+                        <li class="lab-news"><a href="https://professionals.gulflabexpo.com">Networking</a></li>
+                        <li class="classified active"><a href="http://classifieds.gulflabexpo.com">Classifieds</a></li>
+                        <li class="ask-advice"><a href="https://gulflabexpo.com/news">Industry News</a></li>
+                    </ul>
+                    <p class="middle-txt">Online Expo for Clinical Lab Equipment, Products and Services for MENA Region</p>
 
 					<div class="w-100 nav-and-search-container">
 						<div class="search-row mobile-search">
