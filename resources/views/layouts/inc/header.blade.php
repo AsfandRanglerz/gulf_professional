@@ -24,6 +24,32 @@ if (request()->segment(1) != 'countries') {
 }
 ?>
 <style>
+	.sidebar-modern-inner * {
+        background: #f1eeee;
+		margin-bottom: 0!important;
+	}
+
+    .sidebar-modern-inner .block-title h5 {
+        color: #0b76a8;
+    }
+
+    .sidebar-modern-inner .block-title.has-arrow:after {
+        border-color: #0b76a8 transparent transparent;    
+    }
+
+	.list-filter ul ul {
+		padding-left: 0;
+	}
+
+	.filter-content ul li {
+		display: flex;
+		align-items: center;
+	}
+
+	.sidebar-modern-inner .form-control::placeholder {
+		color: #ffffff9e;
+	}
+
 	/*home page outer*/
 	.owl-theme .owl-dots .owl-dot span {
 		width: 8px;
@@ -217,6 +243,10 @@ if (request()->segment(1) != 'countries') {
 	.detail-line-lite div span, .promo-text-box h3,
 	.detail-line div span:first-child, .detail-line-lite div span:first-child {
 		color: #0b76a8;
+	}
+
+	.detail-line div {
+		background-color: unset;
 	}
 
 	.items-details .add-title a,
@@ -884,80 +914,207 @@ if (request()->segment(1) != 'countries') {
 		}
 	}
 
-	@media (max-width: 767px) {
+	.toggle-btn-for-links {
+		border: 2px solid #ccc;
+		border-radius: 4px;
+		padding: 5px;
+		color: #b2b1b1!important;
+		font-size: 20px;
+	}
+
+	@media (min-width: 768px) {
+        .max-767-content {
+            display: none !important;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .mobile-search {
+            box-shadow: inset 0 1px 0 #fafafa9c;
+        }
+
+        #navbarText {
+            box-shadow: inset 0 1px 0 #fafafa9c;
+        }
+
+        .nav-and-search-container .searchs form input[type='text'] {
+            border-radius: 4px;
+        }
+
+        .searchs form input[type='text'] {
+            padding-left: 5px;
+            -webkit-appearance: auto !important;
+            border: 1px solid #fff;
+        }
+
+        .search-dropdown {
+            border-radius: 4px;
+            border: 2px solid #ff8533;
+            background: #ff7e19;
+            color: white;
+            padding: 8px 0;
+            padding-right: 1.1rem;
+            width: 100%;
+            cursor: pointer;
+        }
+        .searching-container {
+            position: relative;
+        }
+
+        .searching-container:after {
+            border-radius: 0 4px 4px 0;
+            content: '\F107';
+            font-family: "Font Awesome\ 5 Free";
+            color: #ff7e19;
+            background: #FFF;
+            right: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            border-left: 1px solid #ff7e19;
+            position: absolute;
+            top: 0;
+            pointer-events: none;
+            font-weight: 900;
+            font-size: 18px;
+        }
+
+        .nav-and-search-container .searchs form {
+            flex-direction: column;
+            padding: 0 8px;
+            padding-top: 12px;
+        }
+
+        .header .dropdown-nav .fa-angle-down {
+            font-size: 18px!important;
+        }
+
+        .header .dropdown-nav {
+            padding: 8px 16px;
+            font-size: 12px;
+            display: flex!important;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-upper-inner2 .main-nav {
+            flex-wrap: nowrap;
+        }
+
+        .border-bottom-767 {
+            display: none;
+        }
+
+        .header .navbar-left {
+            padding: 0!important;
+        }
+
+        .header .navbar-left .navbar-nav li {
+            padding-left: 16px;
+        }
+
+        .list-prof-btns {
+            width: 100%;
+        }
+
+        .header .navbar-left .menubar-nav {
+            width: 100%;
+            margin: 8px 0;
+        }
+
+        .links-container-767 {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .max-767-content {
+            display: block !important;
+        }
+
+        .header-upper-inner1 {
+            justify-content: space-between;
+            width: 100%;
+            padding: 0;
+        }
+
+        .upper-links-main {
+            margin-left: 0;
+        }
+
+        .mini-tab-mobile-hidden {
+            display: none;
+        }
+
+        .header .search-row {
+            border: 1px solid #f1c4c4;
+            padding: 2px;
+        }
+
+        .header .search-row .search-col .form-control.locinput {
+            border: none;
+            border-bottom: none!important;
+        }
+
+        .header .mobile-search {
+            display: block!important;
+        }
+
+        .header .nav-and-search-container .navbar {
+            padding: 0;
+        }
+
 		.header .search-row {
-			border: 1px solid #f1c4c4;
-			padding: 2px;
-		}
+            display: none;
+        }
 
-		.header .search-row .search-col .form-control.locinput {
-			border: none;
-			border-bottom: none!important;
-		}
+        .dropdown-nav .fa-angle-down {
+            font-size: 24px!important;
+        }
 
-		.header .mobile-search {
-			display: block!important;
-		}
+        .navbar-left {
+            flex-direction: column;
+            padding: 0!important;
+        }
 
-		.header .nav-and-search-container .navbar {
-			padding: 0;
-		}
+        .nav-and-search-container {
+            margin-top: 8px;
+        }
 
-		.header .search-row {
-			display: none;
-		}
+        .main-nav + .middle-txt {
+            display: none;
+        }
 
-		.header .navbar-left .navbar-nav {
-			align-items: center;
-		}
-
-		.dropdown-nav .fa-angle-down {
-			font-size: 24px!important;
-		}
-
-		.navbar-left {
-			flex-direction: column;
-			padding: 0!important;
-		}
-
-		.nav-and-search-container {
-			margin-top: 8px;
-		}
-
-		.main-nav + .middle-txt {
-			display: none;
-		}
-
-		.dropdown-nav {
-			display: unset!important;
-		}
+        .dropdown-nav {
+            display: unset!important;
+        }
 
 		.dropdown-nav + .navbar-collapse {
-			padding: 0px !important;
-			border-top: 1px solid #FFF;
-		}
+            padding: 0px !important;
+            border-top: 1px solid #FFF;
+        }
 
-		.main-nav>li.online-expo {
-			border-left: 3px solid #0b76a8ab;
-		}
+        .main-nav>li.online-expo {
+            border-left: 3px solid #0b76a8ab;
+        }
 
-		.main-nav>li.lab-news {
-			border-left: 3px solid #ff7e19;
-		}
+        .main-nav>li.lab-news {
+            border-left: 3px solid #ff7e19;
+        }
 
-		.main-nav>li.classified {
-			border-left: 3px solid #00b050;
-		}
+        .main-nav>li.classified {
+            border-left: 3px solid #00b050;
+        }
 
-		.main-nav>li.ask-advice {
-			border-left: 3px solid #ed786f;
-		}
+        .main-nav>li.ask-advice {
+            border-left: 3px solid #ed786f;
+        }
 
-		.main-nav>li>a {
-			margin-top: 0!important;
-			padding: 0 8px !important;
-		}
-	}
+        .main-nav>li>a {
+            margin-top: 0!important;
+            padding: 0 8px !important;
+        }
+    }
 
 	@media (max-width: 575px) {
 		/*home page outer*/
@@ -974,20 +1131,12 @@ if (request()->segment(1) != 'countries') {
 			grid-template-columns: 25% 25% 25% 25%;
 		}
 
-		.list-prof-btns {
-			width: 135px;
-		}
-
 		.header .search-row .search-col .form-control,
 		.header .search-row button.btn-search,
 		.header .search-row-wrapper .form-control,
 		.header .search-row-wrapper button.btn,
 		.orange-btn {
-			font-size: 11px!important;
-		}
-
-		.orange-btn {
-			font-size: 11px;
+			font-size: 12px!important;
 		}
 
 		.header .header-upper {
@@ -1022,7 +1171,7 @@ if (request()->segment(1) != 'countries') {
 
 		.main-nav>li>a {
 			font-size: 12px!important;
-			padding: 0 6px!important;
+			padding: 0 4px!important;
 		}
 
 		.main-nav>li:before {
@@ -1062,7 +1211,7 @@ if (request()->segment(1) != 'countries') {
 						<a href="{{ url('/') }}"><img src="https://gulflabexpo.com/public/img/gulf-new-header.png"></a>
 					</div>
 					<div class="upper-links-main">
-						<ul class="upper-links">
+						<ul class="upper-links mini-tab-mobile-hidden">
 							<li class="link">
 								<span class="fa fa-envelope fa-icons" aria-hidden="true"></span>
 								<a href="{{url('contact')}}">Contact Us</a>
@@ -1093,24 +1242,42 @@ if (request()->segment(1) != 'countries') {
 										<span class="badge badge-pill badge-important count-threads-with-new-messages hidden-sm">0</span>
 										<span class="icon-down-open-big fa"></span>
 									</a>
+									<?php
+									$xf = \XF::app();
+									$user = $xf->finder('XF:User')
+											->where('email',auth()->user()->email)->fetchOne();
+									$fulllink ='https://professionals.gulflabexpo.com/public/forum/index.php?members/'.strtolower(str_replace(' ','-',$user['username'])).'.'.$user['user_id'].'/';
+
+									?>
 									<ul id="userMenuDropdown" class="dropdown-menu user-menu dropdown-menu-right shadow-sm">
 										<li class="dropdown-item active">
 											<a href="{{ url('account') }}">
-												<span class="icon-home"></span> {{ t('Personal Home') }}
+												<span class="icon-user-1"></span> My Account
 											</a>
 										</li>
-										<li class="dropdown-item"><a href="{{ url('account/my-posts') }}"><span class="icon-th-thumb"></span> {{ t('my_ads') }} </a></li>
-										<li class="dropdown-item"><a href="{{ url('account/favourite') }}"><span class="icon-heart"></span> {{ t('favourite_ads') }} </a></li>
-										<li class="dropdown-item"><a href="{{ url('account/saved-search') }}"><span class="icon-star-circled"></span> {{ t('Saved searches') }} </a></li>
-										<li class="dropdown-item"><a href="{{ url('account/pending-approval') }}"><span class="icon-hourglass"></span> {{ t('pending_approval') }} </a></li>
-										<li class="dropdown-item"><a href="{{ url('account/archived') }}"><span class="icon-folder-close"></span> {{ t('archived_ads') }}</a></li>
-										<li class="dropdown-item">
-											<a href="{{ url('account/messages') }}">
-												<i class="icon-mail-1"></i> {{ t('messenger') }}
-												<span class="badge badge-pill badge-important count-threads-with-new-messages">0</span>
-											</a>
-										</li>
-										<li class="dropdown-item"><a href="{{ url('account/transactions') }}"><span class="icon-money"></span> {{ t('Transactions') }}</a></li>
+										<li class="dropdown-item"><a href="{{ url('account/my-posts') }}"><span class="icon-user"></span> My Profile </a></li>
+										<li class="dropdown-item"><a href="{{$fulllink}}"><span class="icon-clipboard"></span> My Posts </a></li>
+										<li class="dropdown-item"><a href="{{ url('account/favourite') }}"><span class="icon-vcard"></span> Contact Directory </a></li>
+
+
+										{{--backup--}}
+{{--										<li class="dropdown-item active">--}}
+{{--											<a href="{{ url('account') }}">--}}
+{{--												<span class="icon-home"></span> {{ t('Personal Home') }}--}}
+{{--											</a>--}}
+{{--										</li>--}}
+{{--										<li class="dropdown-item"><a href="{{ url('account/my-posts') }}"><span class="icon-th-thumb"></span> {{ t('my_ads') }} </a></li>--}}
+{{--										<li class="dropdown-item"><a href="{{ url('account/favourite') }}"><span class="icon-heart"></span> {{ t('favourite_ads') }} </a></li>--}}
+{{--										<li class="dropdown-item"><a href="{{ url('account/saved-search') }}"><span class="icon-star-circled"></span> {{ t('Saved searches') }} </a></li>--}}
+{{--										<li class="dropdown-item"><a href="{{ url('account/pending-approval') }}"><span class="icon-hourglass"></span> {{ t('pending_approval') }} </a></li>--}}
+{{--										<li class="dropdown-item"><a href="{{ url('account/archived') }}"><span class="icon-folder-close"></span> {{ t('archived_ads') }}</a></li>--}}
+{{--										<li class="dropdown-item">--}}
+{{--											<a href="{{ url('account/messages') }}">--}}
+{{--												<i class="icon-mail-1"></i> {{ t('messenger') }}--}}
+{{--												<span class="badge badge-pill badge-important count-threads-with-new-messages">0</span>--}}
+{{--											</a>--}}
+{{--										</li>--}}
+{{--										<li class="dropdown-item"><a href="{{ url('account/transactions') }}"><span class="icon-money"></span> {{ t('Transactions') }}</a></li>--}}
 										<li class="dropdown-divider"></li>
 										<li class="dropdown-item">
 											@if (app('impersonate')->isImpersonating())
@@ -1122,86 +1289,157 @@ if (request()->segment(1) != 'countries') {
 									</ul>
 								</li>
 							@endif
-							@if (request()->segment(1) != 'countries')
-								@if (config('settings.geo_location.country_flag_activation'))
-									@if (!empty(config('country.icode')))
-										@if (file_exists(public_path() . '/images/flags/32/' . config('country.icode') . '.png'))
-											{{--                                        <li class="flag-menu country-flag tooltipHere hidden-xs nav-item" data-toggle="tooltip" data-placement="{{ (config('lang.direction') == 'rtl') ? 'bottom' : 'right' }}" {!! $multiCountriesLabel !!}>--}}
-											<li class="flag-menu country-flag tooltipHere hidden-xs nav-item" data-toggle="tooltip" data-placement="{{ (config('lang.direction') == 'rtl') ? 'bottom' : 'right' }}">
-												@if (isset($multiCountriesIsEnabled) and $multiCountriesIsEnabled)
-													{{--                                                <a href="#selectCountry" data-toggle="modal" class="p-0 ml-3 line-height-one nav-link">--}}
-													<a href="#selectCountry" data-toggle="modal" class="p-0 ml-3 line-height-one nav-link">
-														<img class="flag-icon"
-															 src="{{ url('images/flags/32/' . config('country.icode') . '.png') . getPictureVersion() }}"
-															 alt="{{ config('country.name') }}"
-														>
-														<span class="caret hidden-sm"></span>
-														{{--                                                    <span class="caret hidden-sm"></span>--}}
-													</a>
-												@else
-													<a style="cursor: default;">
-														<img class="flag-icon no-caret"
-															 src="{{ url('images/flags/32/' . config('country.icode') . '.png') . getPictureVersion() }}"
-															 alt="{{ config('country.name') }}"
-														>
-													</a>
-												@endif
-											</li>
-										@endif
-									@endif
-								@endif
-							@endif
+{{--							@if (request()->segment(1) != 'countries')--}}
+{{--								@if (config('settings.geo_location.country_flag_activation'))--}}
+{{--									@if (!empty(config('country.icode')))--}}
+{{--										@if (file_exists(public_path() . '/images/flags/32/' . config('country.icode') . '.png'))--}}
+{{--											--}}{{--                                        <li class="flag-menu country-flag tooltipHere hidden-xs nav-item" data-toggle="tooltip" data-placement="{{ (config('lang.direction') == 'rtl') ? 'bottom' : 'right' }}" {!! $multiCountriesLabel !!}>--}}
+{{--											<li class="flag-menu country-flag tooltipHere hidden-xs nav-item" data-toggle="tooltip" data-placement="{{ (config('lang.direction') == 'rtl') ? 'bottom' : 'right' }}">--}}
+{{--												@if (isset($multiCountriesIsEnabled) and $multiCountriesIsEnabled)--}}
+{{--													--}}{{--                                                <a href="#selectCountry" data-toggle="modal" class="p-0 ml-3 line-height-one nav-link">--}}
+{{--													<a href="#selectCountry" data-toggle="modal" class="p-0 ml-3 line-height-one nav-link">--}}
+{{--														<img class="flag-icon"--}}
+{{--															 src="{{ url('images/flags/32/' . config('country.icode') . '.png') . getPictureVersion() }}"--}}
+{{--															 alt="{{ config('country.name') }}"--}}
+{{--														>--}}
+{{--														<span class="caret hidden-sm"></span>--}}
+{{--														--}}{{--                                                    <span class="caret hidden-sm"></span>--}}
+{{--													</a>--}}
+{{--												@else--}}
+{{--													<a style="cursor: default;">--}}
+{{--														<img class="flag-icon no-caret"--}}
+{{--															 src="{{ url('images/flags/32/' . config('country.icode') . '.png') . getPictureVersion() }}"--}}
+{{--															 alt="{{ config('country.name') }}"--}}
+{{--														>--}}
+{{--													</a>--}}
+{{--												@endif--}}
+{{--											</li>--}}
+{{--										@endif--}}
+{{--									@endif--}}
+{{--								@endif--}}
+{{--							@endif--}}
 						</ul>
-						<p class="expo-txt">PROFESSIONALS</p>
+						<p class="expo-txt">NETWORKING</p>
 					</div>
+					<a role="buttons" data-toggle="collapse" data-target="#navbarText" aria-expanded="true" class="fa fa-bars toggle-btn-for-links max-767-content"></a>
 				</div>
 				<div class="col-lg-6 col-md-12 header-upper-inner2 px-0">
 					<ul class="nav navbar-nav main-nav">
-                        <li class="online-expo"><a href="https://gulflabexpo.com/online/expo">Online Exhibition</a></li>
+                        <li class="online-expo"><a href="https://gulflabexpo.com">Online Exhibition</a></li>
                         <li class="lab-news"><a href="https://professionals.gulflabexpo.com">Networking</a></li>
                         <li class="classified active"><a href="http://classifieds.gulflabexpo.com">Classifieds</a></li>
                         <li class="ask-advice"><a href="https://gulflabexpo.com/news">Industry News</a></li>
                     </ul>
                     <p class="middle-txt">Online Expo for Clinical Lab Equipment, Products and Services for MENA Region</p>
-
-					<div class="w-100 nav-and-search-container">
-						<div class="search-row mobile-search">
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
 		<div class="bordr nav-and-search-container">
 			<nav class="py-0 navbar navbar-expand-md" style="background-color:#0b76a8 !important">
-				<button data-toggle="collapse" data-target="#navbarText" class="dropdown-nav"><span class="fa fa-angle-down"></span></button>
+				<button data-toggle="collapse" data-target="#navbarText1" class="dropdown-nav">FIND A PROFESSIONAL<span class="fa fa-angle-down"></span></button>
+				<div class="d-md-none w-100">
+				<?php
+					// Keywords
+					$keywords = rawurldecode(request()->get('q'));
+
+					// Category
+					$qCategory = (isset($cat) and !empty($cat)) ? $cat->tid : request()->get('c');
+
+					// Location
+					if (isset($city) and !empty($city)) {
+						$qLocationId = (isset($city->id)) ? $city->id : 0;
+						$qLocation = $city->name;
+						$qAdmin = request()->get('r');
+					} else {
+						$qLocationId = request()->get('l');
+						$qLocation = (request()->filled('r')) ? t('area') . rawurldecode(request()->get('r')) : request()->get('location');
+						$qAdmin = request()->get('r');
+					}
+				?>
+                    <div class="mt-0 navbar-collapse nav-and-search-container collapse in" id="navbarText1" aria-expanded="true" style="">
+                        <div class="searchs mobile-search">
+                            <form class="" action="" method="get" id="searchForm" style="position: relative">
+                                <div class="searching-container">
+									<select name="c" id="catSearch" class="search-dropdown">
+										<option value="" {{ ($qCategory=='') ? 'selected="selected"' : '' }}>
+											{{ 'ALL PROFESSION CATEGORIES' }}
+										</option>
+										{{-- @if (isset($rootCats) and $rootCats->count() > 0) --}}
+										@foreach (\App\Models\Category::trans()->where(function ($query) {
+												$query->where('parent_id', 0)->orWhereNull('parent_id');
+											})->orderBy('lft')->get() as $itemCat)
+											<option {{ ($qCategory==$itemCat->tid) ? ' selected="selected"' : '' }} value="{{ $itemCat->tid }}">
+												{{ $itemCat->name }}
+											</option>
+										@endforeach
+										{{-- @endif --}}
+									</select>
+                                </div>
+
+                                <div class="my-2 searching-container">
+									<select name="locSearch" id="location" class="search-dropdown">
+										<option value="" {{ (request('country_search')=='') ? 'selected="selected"' : '' }}>
+											{{ 'ALL MENA COUNTRIES' }}
+										</option>
+
+										@foreach (\App\Models\Country::all() as $country)
+											<option {{ (request('country_search')==$country->code) ? ' selected="selected"' : '' }} value="{{ $country->code }}">
+												{{ $country->asciiname }}
+											</option>
+										@endforeach
+									</select>
+                                </div>
+
+								<div class="category-search-inner">
+									<input name="q" class="form-control keyword" type="text" placeholder="Name" value="{{ $keywords }}">
+								</div>
+
+								<input type="hidden" id="lSearch" name="l" value="{{ $qLocationId }}">
+                    			<input type="hidden" id="rSearch" name="r" value="{{ $qAdmin }}">
+
+                                <div class="text-center">
+                                    <button class="btn submit color-white" type="submit" style="background: unset;box-shadow: none">
+                                        <span class="fa fa-search mr-3"></span>{{ t('find') }}
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 				<div class="collapse navbar-collapse" id="navbarText">
 					<div class="navbar-left px-0">
 
 						<div class="menubar-nav">
 							<ul class="nav navbar-nav hov">
-								<li class="coll"><a class="botom-navabr" href="{{ url('/') }}">Home</a></li>
-								<li class="coll"><a class="botom-navabr" href="#">About Us</a></li>
+								<li class="coll mb-md-0 mb-2"><a class="botom-navabr" href="{{ url('/') }}">Home</a></li>
+								<li class="coll mb-md-0 mb-2"><a class="botom-navabr" href="#">About Us</a></li>
+                                <li class="coll mb-md-0 mb-2 max-767-content"><a class="botom-navabr" href="#">FAQs</a></li>
+								<li class="coll mb-md-0 mb-2 max-767-content"><a class="botom-navabr" href="#">Contact Us</a></li>
+								<li class="coll mb-md-0 mb-2 max-767-content"><a class="botom-navabr" href="#">Profile Log In</a></li>
+								<li class="coll max-767-content"><a class="botom-navabr" href="#">Create Your Profile</a></li>
 							</ul>
 						</div>
 						<div class="mx-0 search-row">
+							@includeFirst([config('larapen.core.customizedViewPath') . 'search.inc.header-search', 'search.inc.header-search'])
 						</div>
-						<div class="mt-lg-0 mt-md-2 d-flex align-items-center">
+						<div class="mt-lg-0 mt-md-2 d-flex align-items-center links-container-767">
 							<!-- <a class="mr-1 postadd btn orange-btn list-prof-btns" href="#quickLogin" data-toggle="modal">
                                 <span class="fa fa-plus-circle mr-2"></span> Add Listing
                             </a> -->
-							<div class="d-inline-block menubar-nav mr-3">
-								<ul class="nav navbar-nav hov">
-									<li class="coll mr-3"><a class="botom-navabr" href="#">FAQs</a></li>
-								</ul>
-							</div>
+							<div class="d-inline-md-block d-none menubar-nav mr-md-3">
+                                <ul class="nav navbar-nav hov">
+                                    <li class="coll mr-3"><a class="botom-navabr" href="#">FAQs</a></li>
+                                </ul>
+                            </div>
 
 							@if(auth()->user())
-								<a class="postadd btn orange-btn list-prof-btns" href="{{ url('create-1') }}"{{ url('create-1') }}>
-									<span class="fa fa-plus-circle mr-2"></span> {{ ('Post an Ad') }}
+{{--								<a class="postadd btn orange-btn list-prof-btns" href="{{ url('create-1') }}"{{ url('create-1') }}>--}}
+								<a class="postadd btn orange-btn list-prof-btns" href="https://professionals.gulflabexpo.com/forum/index.php">
+									<span class="fa fa-plus-circle d-md-inline-block d-none mr-2"></span><span class="fa fa-plus d-md-none d-inline-block mr-2"></span> {{ ('Join a Discussion') }}
 								</a>
 							@else
 								<a class="postadd btn orange-btn list-prof-btns" href="{{ url('login') }}"{{ url('create-1') }}>
-									<span class="fa fa-plus-circle mr-2"></span> {{ ('Post an Ad') }}
+									<span class="fa fa-plus-circle d-md-inline-block d-none mr-2"></span><span class="fa fa-plus d-md-none d-inline-block mr-2"></span> {{ ('Join a Discussion') }}
 								</a>
 							@endif
 							<!-- <a class="btn orange-btn list-prof-btns"><span class="fa fa-plus-circle mr-2"></span>Create an Ad</a> -->
@@ -1210,7 +1448,7 @@ if (request()->segment(1) != 'countries') {
 				</div>
 			</nav>
 		</div>
-		<div class="row bordr" style="border:3px solid #ff8533;background: #ff8533;margin: 0"></div>
+		<div class="row bordr border-bottom-767" style="border:3px solid #ff8533;background: #ff8533;margin: 0"></div>
 	</div>
 </div>
 
