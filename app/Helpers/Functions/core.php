@@ -3010,7 +3010,7 @@ function genEmailContactBtn($post = null, $btnBlock = false, $iconOnly = false)
 	$btnClass = '';
     if (!auth()->check()) {
         if (config('settings.single.guests_can_contact_ads_authors') != '1') {
-            $btnLink = '#quickLogin';
+            $btnLink = 'javascript:void(0)';
         }
     } else{
         $xfUser = \XF::em()->findOne('XF:User',['email','=',$post->User->email]);
@@ -3028,7 +3028,7 @@ function genEmailContactBtn($post = null, $btnBlock = false, $iconOnly = false)
             $out .= '</a>';
         }elseif ($btnBlock){
             $btnClass = $btnClass . ' btn-block';
-            $out .= '<a href="' . $btnLink2 . '" class="btn btn-default' . $btnClass .'>';
+            $out .= '<a href="' . $btnLink2 . '" class="btn btn-primary' . $btnClass .'>';
             $out .= '<i class="far fa-envelope-open"></i> ';
             $out .= t('Send a message');
             $out .= '</a>';
