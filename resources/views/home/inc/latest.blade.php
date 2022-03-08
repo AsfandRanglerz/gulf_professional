@@ -39,9 +39,9 @@ if (isset($latestOptions, $latestOptions['hide_on_mobile']) and $latestOptions['
 						<?php
 							// Main Picture
 							if ($post->pictures->count() > 0) {
-								$postImg = imgUrl($post->pictures->get(0)->filename, 'medium');
+								$postImg = imgUrl($post->pictures->get(0)->filename, 'big');
 							} else {
-								$postImg = imgUrl(config('larapen.core.picture.default'), 'medium');
+								$postImg = imgUrl(config('larapen.core.picture.default'), 'big');
 							}
 						?>
 						<div class="item-list">
@@ -58,7 +58,7 @@ if (isset($latestOptions, $latestOptions['hide_on_mobile']) and $latestOptions['
 							<div class="row">
 								<div class="col-sm-2 col-12 no-padding photobox">
 									<div class="add-image">
-										<span class="photo-count"><i class="fa fa-camera"></i> {{ $post->pictures->count() }} </span>
+										<span class="d-none photo-count"><i class="fa fa-camera"></i> {{ $post->pictures->count() }} </span>
 										<a href="{{ \App\Helpers\UrlGen::post($post) }}">
 											<img class="lazyload img-thumbnail no-margin" src="{{ $postImg }}" alt="{{ $post->title }}">
 										</a>
@@ -205,11 +205,11 @@ if (isset($latestOptions, $latestOptions['hide_on_mobile']) and $latestOptions['
 									@endif
 									@if (isset($post->savedByLoggedUser) and $post->savedByLoggedUser->count() > 0)
 										<a class="btn btn-success btn-sm make-favorite" id="{{ $post->id }}">
-											<i class="fa fa-heart"></i><span> {{ t('Saved') }} </span>
+											<i class="fa fa-folder"></i><span> {{ t('Saved') }} </span>
 										</a>
 									@else
 										<a class="btn btn-default btn-sm make-favorite" id="{{ $post->id }}">
-											<i class="fa fa-heart"></i><span> {{ t('Save') }} </span>
+											<i class="fa fa-folder"></i><span> {{ t('Save') }} </span>
 										</a>
 									@endif
 								</div>

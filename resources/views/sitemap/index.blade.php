@@ -103,7 +103,7 @@
 						</div>
 					</div>
 
-					@if (isset($cities))
+					<!-- @if (isset($cities))
 						@includeFirst([config('larapen.core.customizedViewPath') . 'home.inc.spacer', 'home.inc.spacer'])
 						<div class="col-xl-12">
 							<div class="content-box mb-0">
@@ -138,11 +138,11 @@
 								</div>
 							</div>
 						</div>
-					@endif
+					@endif -->
 
 				</div>
 
-				@includeFirst([config('larapen.core.customizedViewPath') . 'layouts.inc.social.horizontal', 'layouts.inc.social.horizontal'])
+				<!-- @includeFirst([config('larapen.core.customizedViewPath') . 'layouts.inc.social.horizontal', 'layouts.inc.social.horizontal']) -->
 
 			</div>
 		</div>

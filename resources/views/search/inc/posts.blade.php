@@ -212,11 +212,11 @@ if (!isset($cacheExpiration)) {
 				@endif
 				@if (isset($post->savedByLoggedUser) and $post->savedByLoggedUser->count() > 0)
 					<a class="btn btn-success btn-sm make-favorite" id="{{ $post->id }}">
-						<i class="fa fa-heart"></i><span> {{ t('Saved') }} </span>
+						<i class="fa fa-folder"></i><span> {{ t('Saved') }} </span>
 					</a>
 				@else
 					<a class="btn btn-default btn-sm make-favorite" id="{{ $post->id }}">
-						<i class="fa fa-heart"></i><span> {{ t('Save') }} </span>
+						<i class="fa fa-folder"></i><span> {{ t('Save') }} </span>
 					</a>
 				@endif
 			</div>
