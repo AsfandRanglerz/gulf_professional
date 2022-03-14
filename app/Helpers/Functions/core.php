@@ -3028,8 +3028,8 @@ function genEmailContactBtn($post = null, $btnBlock = false, $iconOnly = false)
             $out .= '</a>';
         }elseif ($btnBlock){
             $btnClass = $btnClass . ' btn-block';
-            $out .= '<a href="' . $btnLink2 . '" class="btn btn-primary' . $btnClass .'>';
-            $out .= '<i class="far fa-envelope-open"></i> ';
+            $out .= '<a href="' . $btnLink2 . '" class="btn btn-block' . $btnClass .'" ' . ' style="background: whitesmoke;border: 1px solid;">';
+            $out .= '<i class="far fa-envelope-open mr-2"></i> ';
             $out .= t('Send a message');
             $out .= '</a>';
         }
@@ -3184,7 +3184,7 @@ function genDiscussionBtn($post, $btnBlock = false)
 		$btnLink = url("forum/index.php?members/{$xfUser->user_id}");
 		$btnClass = ' btn-block';
 		// Generate the Phone Number button
-		$out .= '<a href="' . $btnLink . '" ' . ' class="btn btn-primary' . $btnClass . '">';
+		$out .= '<a href="' . $btnLink . '" ' . ' class="btn btn-block' . $btnClass . '" ' . ' style="background: whitesmoke;border: 1px solid;">';
 		$out .= "Join A Discussion";
 		$out .= '</a>';
 	}

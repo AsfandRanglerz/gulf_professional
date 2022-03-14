@@ -45,24 +45,71 @@ if (request()->segment(1) != 'countries') {
 	.photo-count {
 		display: none;
 	}
+
+	.item-location, .item-location .info-link {
+		color: #0b76a8;
+	}
+
+	.overflow-hidden-one-line {
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 1;
+	}
+
+	.overflow-hidden-two-lines {
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+	}
+
+	.sidebar-header, .sidebar-header * {
+		background: #0b76a8!important;
+		color: #FFF!important;
+	}
+
+	.select2-container {
+		z-index: 2;
+	}
 	
 	.select2-container--default .select2-selection--single .select2-selection__rendered,
 	.select2-container--default .select2-selection--single .select2-selection__arrow {
 		background-color: #FFF;
 	}
 
-	#homepage .add-image a img {
-		width: 100%;
-		height: 245px;
-		object-fit: cover;
-		object-position: top;
+	.items-details h5 {
+		text-align: center;
 	}
-	
-	.add-image a img {
-		width: 100%;
+
+	.add-image a {
+		text-align: center;
+		background-image: url(https://professionals.gulflabexpo.com/images/back-profile-img.bmp);
+		background-size: 100% 50%;
+		background-repeat: no-repeat;
+		object-fit: cover;
+	}
+
+	.price-box {
+		text-align: right!important;
+	}
+
+	#homepage .add-image a img {
+		width: 155px;
 		height: 155px;
 		object-fit: cover;
 		object-position: top;
+		border-radius: 50%;
+		margin-top: 15px!important;
+	}
+	
+	.add-image a img {
+		width: 155px;
+		height: 155px;
+		object-fit: cover;
+		object-position: top;
+		border-radius: 50%;
+		margin-top: 15px!important;
 	}
 
 	#homepage .f-category img {
@@ -74,7 +121,7 @@ if (request()->segment(1) != 'countries') {
 	}
 
 	.page-sidebar .inner-box {
-		background: #f1eeee;
+		background: #f5f5f5;
 	}
 
 	.page-sidebar .inner-box .collapse-title {
@@ -83,7 +130,7 @@ if (request()->segment(1) != 'countries') {
 	}
 
 	.user-panel-sidebar ul li a.active, .user-panel-sidebar ul li a:hover {
-    	background-color: #4682b4;
+    	background-color: #0b76a8;
 	}
 
 	.user-panel-sidebar ul li a {
@@ -106,6 +153,10 @@ if (request()->segment(1) != 'countries') {
 	.sidebar-modern-inner * {
 		background: #f1eeee;
 		margin-bottom: 0!important;
+	}
+
+	.sidebar-modern-inner .block-title {
+    	padding: 8px 16px;
 	}
 
 	.sidebar-modern-inner .block-title h5 {
@@ -237,7 +288,7 @@ if (request()->segment(1) != 'countries') {
 	#stepWizard ul.nav-wizard .active ~ li,
 	#stepWizard ul.nav-wizard {
 		background: #f5f5f5;
-		border-color: #00b050;
+		border-color: #cbc6c6;
 	}
 
 	#stepWizard ul.nav-wizard li.active {
@@ -253,7 +304,7 @@ if (request()->segment(1) != 'countries') {
 	}
 
 	#stepWizard ul.nav-wizard li:before {
-		border-left: 16px solid #00b050;
+		border-left: 16px solid #cbc6c6;
 	}
 
 	#stepWizard ul.nav-wizard li.active a,
@@ -272,13 +323,22 @@ if (request()->segment(1) != 'countries') {
 	}
 
 	.sidebar-card .card-header {
-		background: #ff7e19!important;
+		background: #0b76a8!important;
 		color: #FFF;
 		text-align: center;
 	}
 
 	.border-color-primary {
-		border-color: #ff7e19!important;
+		border-color: #dfdfdf!important;
+	}
+
+	.file-drop-zone .file-preview-thumbnails {
+		display: flex;
+	    justify-content: center;
+	}
+
+	#picturesBloc .control-label {
+		text-align: center;
 	}
 
 	.icon-picture, .icon-pencil-circled, .icon-heart-2 {
@@ -335,6 +395,7 @@ if (request()->segment(1) != 'countries') {
 		display: -webkit-box;
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 1;
+		color: #0b76a8;
 	}
 
 	.post-promo h2 {
@@ -483,8 +544,8 @@ if (request()->segment(1) != 'countries') {
 	}
 
 	.items-details h5 {
-		background-color: #0b76a8;
-		margin-bottom: 8px;
+		margin-bottom: 4px;
+		font-size: 16px;
 	}
 
 	.items-details h1 > a , .items-details h2 > a , .items-details h3 > a ,
@@ -888,6 +949,11 @@ if (request()->segment(1) != 'countries') {
 	}
 
 	@media (max-width: 1199px) {
+		.add-image a img {
+			width: 125px;
+			height: 125px;
+		}
+
 		.header .select2-container--default .select2-selection--single,
 		.header .form-control,
 		.header .search-row .search-col .form-control,
@@ -936,6 +1002,16 @@ if (request()->segment(1) != 'countries') {
 	}
 
 	@media (max-width: 991px) {
+		#homepage .add-image a img {
+			width: 125px;
+			height: 125px;
+		}
+
+		.add-image a img {
+			width: 95px;
+			height: 95px;
+		}
+
 		/*home page outer*/
 		.container-fluid {
 			padding: 0 15px!important;
@@ -1008,6 +1084,11 @@ if (request()->segment(1) != 'countries') {
 	}
 
 	@media (max-width: 767px) {
+		#homepage .add-image a img {
+			width: 115px;
+			height: 115px;
+		}
+
 		.mobile-search {
 			box-shadow: inset 0 1px 0 #fafafa9c;
 		}
@@ -1196,6 +1277,19 @@ if (request()->segment(1) != 'countries') {
 	}
 
 	@media (max-width: 575px) {
+		span.item-location a {
+			font-size: 12px;
+		}
+
+		#stepWizard ul.nav-wizard li {
+			font-size: 14px;
+			padding: 0 10px 0 20px;
+		}
+
+		.page-content .inner-box .title-2 {
+			font-size: 16px;
+		}
+
 		/*home page outer*/
 		.promo-text-box .paragraph, p, #loginForm .card-footer {
 			font-size: 13px;
@@ -1388,11 +1482,11 @@ if (request()->segment(1) != 'countries') {
 								<li class="coll mb-md-0 mb-2 max-767-content"><a class="botom-navabr" href="{{url('login')}}">Profile Log In</a></li>
 								<li class="coll mb-md-0 mb-2 max-767-content"><a class="botom-navabr" href="{{url('register')}}">Create Your Profile</a></li>
 								@else
-									<li class="coll mb-md-0 mb-2 max-767-content"><a class="botom-navabr" href="{{ url('account') }}">{{ auth()->user()->name }}</a></li>
-									<li class="coll mb-md-0 mb-2 max-767-content"><a class="botom-navabr" href="{{ url('account') }}">My Account</a></li>
-									<li class="coll mb-md-0 mb-2 max-767-content"><a class="botom-navabr" href="{{ url('account/my-posts') }}">My Profile</a></li>
-									<li class="coll mb-md-0 mb-2 max-767-content"><a class="botom-navabr" href="{{$fulllink}}">My Posts</a></li>
-									<li class="coll mb-md-0 mb-2 max-767-content"><a class="botom-navabr" href="{{ url('account/favourite') }}">Contact Directory</a></li>
+									<li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{ url('account') }}">{{ auth()->user()->name }}</a></li>
+									<li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{ url('account') }}">My Account</a></li>
+									<li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{ url('account/my-posts') }}">My Profile</a></li>
+									<li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{$fulllink}}">My Posts</a></li>
+									<li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{ url('account/favourite') }}">Contact Directory</a></li>
 									@if (app('impersonate')->isImpersonating())
 										<li class="coll mb-md-0 mb-2 max-767-content"><a class="botom-navabr" href="{{ route('impersonate.leave') }}">{{ t('Leave') }}</a></li>
 									@else
@@ -1401,7 +1495,7 @@ if (request()->segment(1) != 'countries') {
 								@endif
 							
 								<li class="coll mb-md-0 mb-2 max-767-content"><a class="botom-navabr" href="#">FAQs</a></li>
-								<li class="coll mb-md-0 mb-2 max-767-content"><a class="botom-navabr" href="{{url('contact')}}">Contact Us</a></li>
+								<li class="coll mb-md-0 max-767-content"><a class="botom-navabr" href="{{url('contact')}}">Contact Us</a></li>
 							</ul>
 						</div>
 						<div class="mx-0 search-row">
@@ -1419,13 +1513,21 @@ if (request()->segment(1) != 'countries') {
 
 							@if(auth()->user())
 								{{--								<a class="postadd btn orange-btn list-prof-btns" href="{{ url('create-1') }}"{{ url('create-1') }}>--}}
-								<a class="postadd btn orange-btn list-prof-btns" href="https://professionals.gulflabexpo.com/forum/index.php">
-									<span class="fa fa-plus-circle d-md-inline-block d-none mr-2"></span><span class="fa fa-plus d-md-none d-inline-block mr-2"></span> {{ ('Join a Discussion') }}
-								</a>
+									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{ url('account') }}" style="border-bottom: 1px solid #FFF">My Account</a>
+									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{ url('account/my-posts') }}" style="border-bottom: 1px solid #FFF">My Profile</a>
+									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{$fulllink}}" style="border-bottom: 1px solid #FFF">My Posts</a>
+									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{ url('account/favourite') }}" style="border-bottom: 1px solid #FFF">Contact Directory</a>
+									<a class="postadd btn orange-btn list-prof-btns" href="https://professionals.gulflabexpo.com/forum/index.php">
+										<span class="fa fa-plus-circle d-md-inline-block d-none mr-2"></span><span class="fa fa-plus d-md-none d-inline-block mr-2"></span> {{ ('Join a Discussion') }}
+									</a>
 							@else
-								<a class="postadd btn orange-btn list-prof-btns" href="{{ url('login') }}"{{ url('create-1') }}>
-									<span class="fa fa-plus-circle d-md-inline-block d-none mr-2"></span><span class="fa fa-plus d-md-none d-inline-block mr-2"></span> {{ ('Join a Discussion') }}
-								</a>
+									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{ url('account') }}" style="border-bottom: 1px solid #FFF">My Account</a>
+									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{ url('account/my-posts') }}" style="border-bottom: 1px solid #FFF">My Profile</a>
+									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{$fulllink}}" style="border-bottom: 1px solid #FFF">My Posts</a>
+									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{ url('account/favourite') }}" style="border-bottom: 1px solid #FFF">Contact Directory</a>
+									<a class="postadd btn orange-btn list-prof-btns" href="{{ url('login') }}"{{ url('create-1') }}>
+										<span class="fa fa-plus-circle d-md-inline-block d-none mr-2"></span><span class="fa fa-plus d-md-none d-inline-block mr-2"></span> {{ ('Join a Discussion') }}
+									</a>
 						@endif
 						<!-- <a class="btn orange-btn list-prof-btns"><span class="fa fa-plus-circle mr-2"></span>Create an Ad</a> -->
 						</div>

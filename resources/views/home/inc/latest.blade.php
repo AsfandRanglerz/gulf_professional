@@ -140,23 +140,17 @@ if (isset($latestOptions, $latestOptions['hide_on_mobile']) and $latestOptions['
 
 
 
-								<div class="detail-line pb-2 ">
+								<div class="detail-line pb-1 ">
 									<div class="rounded-small ">
-										<span class="px-2 detail-line-value" style="float: unset">
-
-											<i class="fas fa-briefcase"></i>
-
-											{{ ($post->designation !=null) ? $post->designation : 'Not Entered'}}</span>
+										<p class="px-2 mb-0 detail-line-value text-center overflow-hidden-one-line" style="float: unset">
+											{{ ($post->designation !=null) ? $post->designation : 'Not Entered'}}</p>
 									</div>
 								</div>
 
-								<div class="detail-line pb-2 ">
+								<div class="detail-line pb-1 ">
 									<div class="rounded-small ">
-										<span class="px-2 detail-line-value" style="float: unset">
-
-											<i class="fas fa-building"></i>
-
-											{{ $post->employer != null? $post->employer : 'Not Entered'}}</span>
+										<p class="px-2 mb-0 detail-line-value text-center overflow-hidden-two-lines" style="float: unset">
+											{{ $post->employer != null? $post->employer : 'Not Entered'}}</p>
 									</div>
 								</div>
 											<span class="item-location"{!! (config('lang.direction')=='rtl') ? ' dir="rtl"' : '' !!}>
@@ -167,7 +161,7 @@ if (isset($latestOptions, $latestOptions['hide_on_mobile']) and $latestOptions['
 																['l' => $post->city_id]
 															)
 														) !!}"
-											   class="info-link">{{ $post->post_country->asciiname.' - '.$post->city->name }} </a>
+											   class="info-link">{{ $post->post_country->asciiname }} </a>
 												{{ (isset($post->distance)) ? '- ' . round($post->distance, 2) . getDistanceUnit() : '' }}
 											</span>
 										</span>
@@ -204,12 +198,18 @@ if (isset($latestOptions, $latestOptions['hide_on_mobile']) and $latestOptions['
 										@endif
 									@endif
 									@if (isset($post->savedByLoggedUser) and $post->savedByLoggedUser->count() > 0)
-										<a class="btn btn-success btn-sm make-favorite" id="{{ $post->id }}">
-											<i class="fa fa-folder"></i><span> {{ t('Saved') }} </span>
+										<!-- <a class="btn btn-success btn-sm make-favorite" id="{{ $post->id }}">
+											<i class=""><img src="../images/add-contact-icon-2.png" alt="add-contact-icon-2" height="25" /></i><span> {{ t('Saved') }} </span>
+										</a> -->
+										<a class="btn btn-sm make-favorite" id="{{ $post->id }}">
+											<i class=""><img src="{{ url('/images/add-contact-icon-2.png') }}" alt="add-contact-icon-2" height="25" /></i><span> {{ t('Saved') }} </span>
 										</a>
 									@else
-										<a class="btn btn-default btn-sm make-favorite" id="{{ $post->id }}">
-											<i class="fa fa-folder"></i><span> {{ t('Save') }} </span>
+										<!-- <a class="btn btn-default btn-sm make-favorite" id="{{ $post->id }}">
+											<i class=""><img src="../images/add-contact-icon-2.png" alt="add-contact-icon-2" height="25" /></i><span> {{ t('Save') }} </span>
+										</a> -->
+										<a class="btn btn-sm make-favorite" id="{{ $post->id }}">
+											<i class=""><img src="{{ url('/images/add-contact-icon-2.png') }}" alt="add-contact-icon-2" height="25" /></i><span> {{ t('Save') }} </span>
 										</a>
 									@endif
 								</div>

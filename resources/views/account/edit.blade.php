@@ -42,7 +42,7 @@
 					<div id="avatarUploadError" class="center-block" style="width:100%; display:none"></div>
 					<div id="avatarUploadSuccess" class="alert alert-success fade show" style="display:none;"></div>
 
-					<div class="inner-box default-inner-box">
+					<!-- <div class="inner-box default-inner-box">
 						<div class="row">
 							<div class="col-md-5 col-xs-4 col-xxs-12">
 								<h3 class="no-padding text-center-480 useradmin">
@@ -54,12 +54,12 @@
 							</div>
 							<div class="col-md-7 col-xs-8 col-xxs-12">
 								<div class="header-data text-center-xs">
-									<!-- Threads Stats -->
+									
 									{{-- <div class="hdata">
 										<div class="mcol-left">
 											<i class="fas fa-envelope ln-shadow"></i></div>
 										<div class="mcol-right">
-											<!-- Number of messages -->
+											
 											<p>
 												<a href="{{ url('account/messages') }}">
 													{{ isset($countThreads) ? \App\Helpers\Number::short($countThreads) : 0 }}
@@ -70,13 +70,13 @@
 										<div class="clearfix"></div>
 									</div> --}}
 
-									<!-- Traffic Stats -->
+									
 									<div class="hdata">
 										<div class="mcol-left">
 											<i class="fa fa-eye ln-shadow"></i>
 										</div>
 										<div class="mcol-right">
-											<!-- Number of visitors -->
+											
 											<p>
 												<a href="{{ url('account/my-posts') }}">
 													<?php $totalPostsVisits = (isset($countPostsVisits) and $countPostsVisits->total_visits) ? $countPostsVisits->total_visits : 0 ?>
@@ -88,13 +88,13 @@
 										<div class="clearfix"></div>
 									</div>
 
-									<!-- Ads Stats -->
+									
 									{{--<div class="hdata">
 										<div class="mcol-left">
 											<i class="fa fa-user ln-shadow"></i>
 										</div>
 										<div class="mcol-right">
-											<!-- Number of ads -->
+											
 											<p>
 												<a href="{{ url('account/my-posts') }}">
 													{{ \App\Helpers\Number::short($countPosts) }}
@@ -106,7 +106,7 @@
 									</div> --}}
 
 
-									<!-- Favorites Stats -->
+									
 									{{-- <div class="hdata">
 										<div class="mcol-left">
 											<i class="fa fa-user ln-shadow"></i>
@@ -124,11 +124,11 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 
 					<div class="inner-box default-inner-box">
 						<div class="welcome-msg">
-							<h3 class="page-sub-header2 clearfix no-padding">{{ t('Hello') }} {{ $user->name }} ! </h3>
+							<h3 class="page-sub-header2 clearfix no-padding" style="color: #0b76a8"> {{ $user->name }} ! </h3>
 							<span class="page-sub-header-sub small">
                                 {{ t('You last logged in at') }}: {{ \App\Helpers\Date::format($user->last_login_at, true) }}
                             </span>
@@ -320,7 +320,8 @@
 							<!-- SETTINGS -->
 							<div class="card card-default">
 								<div class="card-header">
-									<h4 class="card-title"><a href="#settingsPanel" data-toggle="collapse" data-parent="#accordion">{{ t('Settings') }}</a></h4>
+{{--									<h4 class="card-title"><a href="#settingsPanel" data-toggle="collapse" data-parent="#accordion">{{ t('Settings') }}</a></h4>--}}
+									<h4 class="card-title"><a href="#settingsPanel" data-toggle="collapse" data-parent="#accordion">Change Password</a></h4>
 								</div>
 								<div class="panel-collapse collapse {{ (old('panel')=='settingsPanel') ? 'show' : '' }}" id="settingsPanel">
 									<div class="card-body">

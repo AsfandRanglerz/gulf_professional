@@ -14,6 +14,11 @@
 @extends('layouts.master')
 
 @section('content')
+	<style>
+		.alert-success + .alert-danger {
+			display: none;
+		}
+	</style>
 	{!! csrf_field() !!}
 	<input type="hidden" id="postId" name="post_id" value="{{ $post->id }}">
 
@@ -300,57 +305,77 @@
 											<!-- Actions -->
 											<div class="row detail-line-action text-center">
 													<div class="col-6 @if (auth()->check() && auth()->user()->id == $post->user_id) mx-auto @endif">
-													@if (auth()->check())
-														@if (auth()->user()->id == $post->user_id)
-															{{-- <a href="{{ url('posts/' . $post->id . '/edit') }}">
-																<i class="icon-pencil-circled tooltipHere"
-																   data-toggle="tooltip"
-																   data-original-title="{{ t('Edit') }}"
-																></i>
-															</a> --}}
-															{{-- Added by taha  --}}
-															<a href="{{ url('posts/' . $post->id . '/edit') }}" class="btn btn-primary">Edit Profile</a>
-														@else
-															@if(\Auth::user()->is_admin == 1)
-															{!! genEmailContactBtn($post, false, true) !!}
-															@else
-															{{-- xenforo link will be made in this block indicated by taha  when user clicks on this button he will be directed to the xenforo profile remove the code below accordind to your requirement --}}
-															{!! genEmailContactBtn($post, false, true) !!}
-															@endif
-														@endif
-													@else
-														{{-- xenforo link will be made in this block indicated by taha  when user clicks on this button he will be directed to the xenforo profile remove the code below accordind to your requirement --}}
+{{--commented by dilawar--}}
+{{--													@if (auth()->check())--}}
+{{--														@if (auth()->user()->id == $post->user_id)--}}
+{{--															--}}{{-- <a href="{{ url('posts/' . $post->id . '/edit') }}">--}}
+{{--																<i class="icon-pencil-circled tooltipHere"--}}
+{{--																   data-toggle="tooltip"--}}
+{{--																   data-original-title="{{ t('Edit') }}"--}}
+{{--																></i>--}}
+{{--															</a> --}}
+{{--															--}}{{-- Added by taha  --}}
+{{--															<a href="{{ url('posts/' . $post->id . '/edit') }}" class="btn btn-primary">Edit Profile</a>--}}
+{{--														@else--}}
+{{--															@if(\Auth::user()->is_admin == 1)--}}
+{{--															{!! genEmailContactBtn($post, false, true) !!}--}}
+{{--															@else--}}
+{{--															--}}{{-- xenforo link will be made in this block indicated by taha  when user clicks on this button he will be directed to the xenforo profile remove the code below accordind to your requirement --}}
+{{--															{!! genEmailContactBtn($post, false, true) !!}--}}
+{{--															@endif--}}
+{{--														@endif--}}
+{{--													@else--}}
+{{--														--}}{{-- xenforo link will be made in this block indicated by taha  when user clicks on this button he will be directed to the xenforo profile remove the code below accordind to your requirement --}}
 
-														{!! genEmailContactBtn($post, false, true) !!}
-													@endif
+{{--														{!! genEmailContactBtn($post, false, true) !!}--}}
+{{--													@endif--}}
+														{{--commented by dilawar--}}
+														{{--added by dilawar--}}
+<?php $xfUser = \XF::em()->findOne('XF:User',['email','=',$post->User->email]);
+		$fulllink =	'https://professionals.gulflabexpo.com/forum/index.php?conversations/add&to='.ucfirst(str_replace(' ','+',$xfUser->username)); ?>
+														@if (auth()->check())
+															<a id="{{ $post->id }}" href="{{$fulllink}}">
+																<i class="" data-toggle="tooltip"
+																   data-original-title="Send a message"><img src="../images/email-1.png" alt="email-1" height="35" /></i>
+															</a>
+														@else
+															<a class="make-favorite" id="{{ $post->id }}" href="javascript:void(0)">
+																<i class="" data-toggle="tooltip"
+																   data-original-title="Send a message"><img src="../images/email-1.png" alt="email-1" height="35" /></i>
+															</a>
+														@endif
+														{{--added by dilawar--}}
 													</div>
 													{{-- Condition added by taha  --}}
-													@if(auth()->check() && \Auth::id() != $post->user_id)
+{{--													@if(auth()->check() && \Auth::id() != $post->user_id)--}}
 													<div class="col-6">
-														<a class="make-favorite" id="{{ $post->id }}" href="javascript:void(0)">
+
 															@if (auth()->check())
+															<a class="make-favorite" id="{{ $post->id }}" href="javascript:void(0)">
 																@if (\App\Models\SavedPost::where('user_id', auth()->user()->id)->where('post_id', $post->id)->count() > 0)
-																	<i class="fa fa-heart tooltipHere"
+																	<i class="tooltipHere"
 																	   data-toggle="tooltip"
 																	   data-original-title="Remove from My Contact Directory"
-																	></i>
+																	><img src="{{ url('/images/add-contact-icon-2.png') }}" alt="add-contact-icon-2" height="35" /></i>
 																@else
-																	<i class="far fa-heart"
+																	<i class=""
 																	   class="tooltipHere"
 																	   data-toggle="tooltip"
 																	   data-original-title="Add to my Contact Directory"
-																	></i>
+																	><img src="{{ url('/images/add-contact-icon-2.png') }}" alt="add-contact-icon-2" height="35" /></i>
 																@endif
+															</a>
 															@else
-																<i class="far fa-heart"
-																   class="tooltipHere"
+															<a class="make-favorite" id="{{ $post->id }}" href="javascript:void(0)">
+																<i class="tooltipHere"
 																   data-toggle="tooltip"
 																   data-original-title="Add to my Contact Directory"
-																></i>
+																><img src="{{ url('/images/add-contact-icon-2.png') }}" alt="add-contact-icon-2" height="35" /></i>
+															</a>
 															@endif
-														</a>
+
 													</div>
-													@endif
+{{--													@endif--}}
 													{{-- <div class="col-4">
 														<a href="{{ url('posts/' . $post->id . '/report') }}">
 															<i class="fa icon-info-circled-alt tooltipHere"
@@ -399,15 +424,15 @@
 							@if (auth()->check() and auth()->id() == $post->user_id)
 								<div class="card-header">Manage Profile</div>
 							@else
-								<div class="block-cell user">
+								<div class="block-cell user px-3 py-2">
 									<div class="cell-media">
-										<img src="{{ $post->user_photo_url }}" alt="{{ $post->contact_name }}">
+										<img src="{{ $post->user_photo_url }}" alt="{{ $post->contact_name }}" class="w-75">
 									</div>
 									<div class="cell-content">
-										<h5 class="title">{{ t('Posted by') }}</h5>
+										<!-- <h5 class="title">{{ t('Posted by') }}</h5> -->
 										<span class="name">
 											@if (isset($user) and !empty($user))
-												<a href="{{ \App\Helpers\UrlGen::user($user) }}">
+												<a href="{{ \App\Helpers\UrlGen::user($user) }}" style="color: #0b76a8">
 													{{ $post->contact_name }}
 												</a>
 											@else
@@ -465,11 +490,11 @@
 								<div class="ev-action" {!! $evActionStyle !!}>
 									@if (auth()->check())
 										@if (auth()->user()->id == $post->user_id)
-											<a href="{{ \App\Helpers\UrlGen::editPost($post) }}" class="btn btn-default btn-block">
+											<a href="{{ \App\Helpers\UrlGen::editPost($post) }}" class="btn btn-block" style="background: whitesmoke">
 												<i class="fa fa-pencil-square-o"></i> Update Details
 											</a>
 											@if (config('settings.single.publication_form_type') == '1')
-												<a href="{{ url('posts/' . $post->id . '/photos') }}" class="btn btn-default btn-block">
+												<a href="{{ url('posts/' . $post->id . '/photos') }}" class="btn btn-block" style="background: whitesmoke">
 													<i class="icon-camera-1"></i> Update Photograph
 												</a>
 												{{-- @if (isset($countPackages) and isset($countPaymentMethods) and $countPackages > 0 and $countPaymentMethods > 0)
@@ -607,7 +632,6 @@
 
 	<!-- bxSlider Javascript file -->
 	<script src="{{ url('assets/plugins/bxslider/jquery.bxslider.min.js') }}"></script>
-
 	<script>
 		/* Favorites Translation */
         var lang = {

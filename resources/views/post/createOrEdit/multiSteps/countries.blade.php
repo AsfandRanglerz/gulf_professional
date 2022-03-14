@@ -31,17 +31,17 @@
 						<p>Gulf Lab EXPO is the next generation expo for the MENA (Middle East and North Africa) region. Join Gulf Lab EXPO and get unprecedented opportunities to network with other clinical lab professionals in the MENA region.</p>
 						<div class="row mx-sm-4 mx-2 mb-3">
 							<div class="col-sm-4 text-center">
-								<img src="../images/forum-3.jpg" alt="forum-3" class="post-contact-ask-imgs" />
+								<img src="{{ url('/images/profile-5.png') }}" alt="forum-3" class="post-contact-ask-imgs" />
 								<h4 class="heading">Post Free Profile</h4>
 								<p>List yourself on Gulf Lab EXPO and discover networking opportunities in the MENA lab industry</p>
 							</div>
 							<div class="col-sm-4 text-center">
-								<img src="../images/profile-5.png" alt="profile-5" class="post-contact-ask-imgs" />
+								<img src="{{ url('/images/search-contact-3.png') }}" alt="profile-5" class="post-contact-ask-imgs" />
 								<h4 class="heading">Search & Contact Members</h4>
 								<p>Search and contact other listed members for relevant inquiries and networking opportunities</p>
 							</div>
 							<div class="col-sm-4 text-center">
-								<img src="../images/search-contact-3.png" alt="search-contact-3" class="post-contact-ask-imgs" />
+								<img src="{{ url('/images/forum-3.jpg') }}" alt="search-contact-3" class="post-contact-ask-imgs" />
 								<h4 class="heading">Ask and Advise</h4>
 								<p>Ask questions or share knowledge by joining forums and group discussions on relevant topics</p>
 							</div>
@@ -91,8 +91,8 @@
 
 				</div>
 
-				@includeFirst([config('larapen.core.customizedViewPath') . 'layouts.inc.social.horizontal', 'layouts.inc.social.horizontal'])
-
+				<!-- @includeFirst([config('larapen.core.customizedViewPath') . 'layouts.inc.social.horizontal', 'layouts.inc.social.horizontal']) -->
+				<p class="mt-3">Registration of Personal Profile on Gulf Lab EXPO is limited to professionals living in the MENA region</p>
 			</div>
 		</div>
 	</div>

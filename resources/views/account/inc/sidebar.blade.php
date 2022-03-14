@@ -11,7 +11,9 @@
 					<ul class="acc-list">
 						<li>
 							<a {!! ($pagePath=='') ? 'class="active"' : '' !!} href="{{ url('account') }}">
-								<i class="icon-home"></i> {{ t('Personal Home') }}
+								<i class="icon-home"></i>
+{{--								{{ t('Personal Home') }}--}}
+								Account Information
 							</a>
 						</li>
 					</ul>
@@ -28,7 +30,7 @@
 					<ul class="acc-list">
 						<li>
 							<a{!! ($pagePath=='my-posts') ? ' class="active"' : '' !!} href="{{ url('account/my-posts') }}">
-							<i class="icon-docs"></i> My Profile&nbsp;
+							<i class="icon-user"></i> My Profile&nbsp;
 							<!-- <span class="badge badge-pill">
 								{{ isset($countMyPosts) ? \App\Helpers\Number::short($countMyPosts) : 0 }}
 							</span> -->
@@ -50,14 +52,14 @@
 							</span>
 							</a>
 						</li> -->
-						<li>
+						<!-- <li>
 							<a{!! ($pagePath=='pending-approval') ? ' class="active"' : '' !!} href="{{ url('account/pending-approval') }}">
 							<i class="icon-hourglass"></i> {{ t('pending_approval') }}&nbsp;
 							<span class="badge badge-pill">
 								{{ isset($countPendingPosts) ? \App\Helpers\Number::short($countPendingPosts) : 0 }}
 							</span>
 							</a>
-						</li>
+						</li> -->
 						<!-- <li>
 							<a{!! ($pagePath=='archived') ? ' class="active"' : '' !!} href="{{ url('account/archived') }}">
 							<i class="icon-folder-close"></i> {{ t('archived_ads') }}&nbsp;

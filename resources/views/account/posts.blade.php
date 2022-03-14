@@ -202,20 +202,23 @@
 
 													<?php
 
-													$xfUser = \XF::em()->findOne('XF:User',['email','=',$post->User->email]);
-													if($xfUser) {
-										$btnLink = url("forum/index.php?members/".$xfUser->user_id);
-														}
+//													$xfUser = \XF::em()->findOne('XF:User',['email','=',$post->User->email]);
+//													if($xfUser) {
+//										                    $btnLink = url("forum/index.php?members/".$xfUser->user_id);
+//														}
+														$xfUser = \XF::em()->findOne('XF:User',['email','=',$post->User->email]);
+														$fulllink =	'https://professionals.gulflabexpo.com/forum/index.php?conversations/add&to='.ucfirst(str_replace(' ','+',$xfUser->username));
+
 														?>
 												<p>
-                                                    <a class="btn btn-primary btn-sm " href="{{$btnLink}}">
+                                                    <a class="btn btn-primary btn-sm " href="{{$fulllink}}">
                                                         <i class="fa fa-eye"></i> Send a Message
                                                     </a>
                                                 </p>
 												@endif
 												@if($pagePath=='favourite')
 												<p>
-                                                    <a class="btn btn-danger btn-sm delete-action" href="{{ url('account/'.$pagePath.'/'.$post->id.'/delete') }}">
+                                                    <a class="btn btn-default btn-sm delete-action" href="{{ url('account/'.$pagePath.'/'.$post->id.'/delete') }}">
                                                         <i class="fa fa-trash"></i> Remove Profile
                                                     </a>
                                                 </p>
