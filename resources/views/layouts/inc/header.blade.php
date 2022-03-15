@@ -1478,19 +1478,14 @@ if (request()->segment(1) != 'countries') {
 							<ul class="nav navbar-nav hov">
 								<li class="coll mb-md-0 mb-2"><a class="botom-navabr" href="{{ url('/') }}">Home</a></li>
 								<li class="coll mb-md-0 mb-2"><a class="botom-navabr" href="#">About Us</a></li>
-								@if (!auth()->check())
-								<li class="coll mb-md-0 mb-2 max-767-content"><a class="botom-navabr" href="{{url('login')}}">Profile Log In</a></li>
-								<li class="coll mb-md-0 mb-2 max-767-content"><a class="botom-navabr" href="{{url('register')}}">Create Your Profile</a></li>
-								@else
+								@if (auth()->check())
 									<li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{ url('account') }}">{{ auth()->user()->name }}</a></li>
 									<li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{ url('account') }}">My Account</a></li>
 									<li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{ url('account/my-posts') }}">My Profile</a></li>
 									<li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{$fulllink}}">My Posts</a></li>
 									<li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{ url('account/favourite') }}">Contact Directory</a></li>
 									@if (app('impersonate')->isImpersonating())
-										<li class="coll mb-md-0 mb-2 max-767-content"><a class="botom-navabr" href="{{ route('impersonate.leave') }}">{{ t('Leave') }}</a></li>
-									@else
-										<li class="coll mb-md-0 mb-2 max-767-content"><a class="botom-navabr" href="{{ \App\Helpers\UrlGen::logout() }}">{{ t('log_out') }}</a></li>
+										<li class="coll mb-md-0 mb-2 max-767-content"><a class="botom-navabr" href="{{ route('impersonate.leave') }}">{{ t('Leave') }}</a></li>										
 									@endif
 								@endif
 							
@@ -1517,13 +1512,13 @@ if (request()->segment(1) != 'countries') {
 									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{ url('account/my-posts') }}" style="border-bottom: 1px solid #FFF">My Profile</a>
 									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{$fulllink}}" style="border-bottom: 1px solid #FFF">My Posts</a>
 									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{ url('account/favourite') }}" style="border-bottom: 1px solid #FFF">Contact Directory</a>
-									<a class="postadd btn orange-btn list-prof-btns" href="https://professionals.gulflabexpo.com/forum/index.php">
+									<a class="postadd btn orange-btn list-prof-btns" href="https://professionals.gulflabexpo.com/forum/index.php" style="border-bottom: 1px solid #FFF">
 										<span class="fa fa-plus-circle d-md-inline-block d-none mr-2"></span><span class="fa fa-plus d-md-none d-inline-block mr-2"></span> {{ ('Join a Discussion') }}
 									</a>
+									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{ \App\Helpers\UrlGen::logout() }}">{{ t('log_out') }}</a>
 							@else
-									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{ url('account') }}" style="border-bottom: 1px solid #FFF">My Account</a>
-									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{ url('account/my-posts') }}" style="border-bottom: 1px solid #FFF">My Profile</a>
-									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{$fulllink}}" style="border-bottom: 1px solid #FFF">My Posts</a>
+									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{url('login')}}" style="border-bottom: 1px solid #FFF">Profile Log In</a>
+									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{url('register')}}" style="border-bottom: 1px solid #FFF">Create Your Profile</a>
 									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{ url('account/favourite') }}" style="border-bottom: 1px solid #FFF">Contact Directory</a>
 									<a class="postadd btn orange-btn list-prof-btns" href="{{ url('login') }}"{{ url('create-1') }}>
 										<span class="fa fa-plus-circle d-md-inline-block d-none mr-2"></span><span class="fa fa-plus d-md-none d-inline-block mr-2"></span> {{ ('Join a Discussion') }}
