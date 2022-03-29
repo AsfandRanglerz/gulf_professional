@@ -140,15 +140,15 @@ if (isset($latestOptions, $latestOptions['hide_on_mobile']) and $latestOptions['
 
 
 
-								<div class="detail-line pb-1 ">
-									<div class="rounded-small ">
-										<p class="px-2 mb-0 detail-line-value text-center overflow-hidden-one-line" style="float: unset">
+								<div class="detail-line">
+									<div class="rounded-small">
+										<p class="px-2 mb-0 detail-line-value text-center overflow-hidden-one-line" style="float: unset;line-height: 1">
 											{{ ($post->designation !=null) ? $post->designation : 'Not Entered'}}</p>
 									</div>
 								</div>
 
-								<div class="detail-line pb-1 ">
-									<div class="rounded-small ">
+								<div class="detail-line pb-1">
+									<div class="rounded-small">
 										<p class="px-2 mb-0 detail-line-value text-center overflow-hidden-two-lines" style="float: unset">
 											{{ $post->employer != null? $post->employer : 'Not Entered'}}</p>
 									</div>
@@ -175,7 +175,7 @@ if (isset($latestOptions, $latestOptions['hide_on_mobile']) and $latestOptions['
 
 								</div>
 
-								<div class="{{ $colPriceBox }} text-right price-box" style="white-space: nowrap;">
+								<div class="{{ $colPriceBox }} text-right price-box save-into-fav" style="white-space: nowrap;">
 									{{--<h4 class="item-price">
 										@if (isset($post->category, $post->category->type))
 											@if (!in_array($post->category->type, ['not-salable']))
@@ -199,17 +199,17 @@ if (isset($latestOptions, $latestOptions['hide_on_mobile']) and $latestOptions['
 									@endif
 									@if (isset($post->savedByLoggedUser) and $post->savedByLoggedUser->count() > 0)
 										<!-- <a class="btn btn-success btn-sm make-favorite" id="{{ $post->id }}">
-											<i class=""><img src="../images/add-contact-icon-2.png" alt="add-contact-icon-2" height="25" /></i><span> {{ t('Saved') }} </span>
+											<i class=""><img src="../images/add-contact-icon-6.png" alt="add-contact-icon-6" height="25" /></i><span> {{ t('Saved') }} </span>
 										</a> -->
 										<a class="btn btn-sm make-favorite" id="{{ $post->id }}">
-											<i class=""><img src="{{ url('/images/add-contact-icon-2.png') }}" alt="add-contact-icon-2" height="25" /></i><span> {{ t('Saved') }} </span>
+											<i class=""><img src="{{ url('/images/add-contact-icon-6.png') }}" alt="add-contact-icon-6" height="25" /></i><span> {{ t('Saved') }} </span>
 										</a>
 									@else
 										<!-- <a class="btn btn-default btn-sm make-favorite" id="{{ $post->id }}">
-											<i class=""><img src="../images/add-contact-icon-2.png" alt="add-contact-icon-2" height="25" /></i><span> {{ t('Save') }} </span>
+											<i class=""><img src="../images/add-contact-icon-6.png" alt="add-contact-icon-6" height="25" /></i><span> {{ t('Save') }} </span>
 										</a> -->
 										<a class="btn btn-sm make-favorite" id="{{ $post->id }}">
-											<i class=""><img src="{{ url('/images/add-contact-icon-2.png') }}" alt="add-contact-icon-2" height="25" /></i><span> {{ t('Save') }} </span>
+											<i class=""><img src="{{ url('/images/add-contact-icon-6.png') }}" alt="add-contact-icon-6" height="25" /></i><span> {{ t('Save') }} </span>
 										</a>
 									@endif
 								</div>

@@ -24,6 +24,29 @@ if (request()->segment(1) != 'countries') {
 }
 ?>
 <style>
+	.category-list.make-grid .item-list .make-favorite.btn-success {
+		background: #c89b0555;
+		border: none;
+		border-radius: 0;
+		margin-right: 3px;
+	}
+
+	.category-list.make-grid .item-list .make-favorite.btn-default {
+		background: unset;
+		border: none;
+	}
+
+	.save-into-fav {
+		position: absolute;
+		right: 2px;
+		padding-top: 0;
+	}
+
+	.category-list.make-grid .item-list {
+		height: fit-content!important;
+		padding: 4px;
+	}
+
 	.post-contact-ask-imgs {
 		height: 125px;
 	}
@@ -95,8 +118,8 @@ if (request()->segment(1) != 'countries') {
 	}
 
 	#homepage .add-image a img {
-		width: 155px;
-		height: 155px;
+		width: 185px;
+		height: 185px;
 		object-fit: cover;
 		object-position: top;
 		border-radius: 50%;

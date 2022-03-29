@@ -296,7 +296,7 @@ if (
 							<div class="widget pl-lg-0 col-lg-12 col-sm-12 col-xs-12">
 								<h5 class="widget-title">Gulf Lab EXPO</h5>
 								<div class="widget-description">
-									<p>Gulf Lab EXPO is an Online EXPO and Marketplace for Clinical Lab Products, Equipment and Services for the MENA (Middle East North Africa) region. Visitors can find lab products and get one-click access to suppliers and distributors for MENA region. Members can create a professional profile to network and exchange knowledge with other lab professionals in MENA, post and search classifieds for lab jobs, products and support services, and get latest news on advances in the clinical lab industry.</p>
+									<p>Gulf Lab EXPO is a Virtual Expo and Marketplace for Clinical Lab Products, Equipment and Services for the MENA (Middle East North Africa) region. Visitors can find lab products and get one-click access to suppliers and distributors for MENA region. Members can create a professional profile to network and exchange knowledge with other lab professionals in MENA, post and search classifieds for lab jobs, products and support services, and get latest news on advances in the clinical lab industry.</p>
 									<ul class="footer_bottom_li">
 
 										<li> <a href="#"> <span class="caption">Terms of Use</span> </a> </li>
@@ -309,7 +309,7 @@ if (
 						</div>
 						<div class="col-md-8 row mx-0 p-0">
 							<div class="widget col-sm-3 col-xs-12">
-								<h5 class="widget-title">Online Exhibition</h5>
+								<h5 class="widget-title">Online Expo</h5>
 								<ul class="quick_links custom-list">
 									<li><a href="#">Search Products</a></li>
 									<li><a href="#">Search Company</a></li>
@@ -337,7 +337,7 @@ if (
 								</ul>
 							</div>
 							<div class="widget col-sm-3 col-xs-12">
-								<h5 class="widget-title">Industry News</h5>
+								<h5 class="widget-title">News</h5>
 								<ul class="quick_links custom-list">
 									<li><a href="#">Latest News</a></li>
 									<li><a href="#">Get News through Email</a></li>
