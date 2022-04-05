@@ -99,7 +99,7 @@ if (!isset($cacheExpiration)) {
 
 								<div class="detail-line pb-1">
 									<div class="rounded-small">
-										<p class="px-2 mb-0 detail-line-value text-center overflow-hidden-two-lines" style="float: unset">
+										<p class="px-2 mb-0 detail-line-value text-center overflow-hidden-one-line" style="float: unset">
 											{{ $post->employer? $post->employer : 'Not Entered'}}</p>
 									</div>
 								</div>
@@ -207,17 +207,17 @@ if (!isset($cacheExpiration)) {
 				@endif
 				@if (isset($post->savedByLoggedUser) and $post->savedByLoggedUser->count() > 0)
 					<!-- <a class="btn btn-success btn-sm make-favorite" id="{{ $post->id }}">
-						<i class=""><img src="../images/add-contact-icon-6.png" alt="add-contact-icon-6" height="25" /></i><span> {{ t('Saved') }} </span>
+						<i class=""><img src="../images/add-contact-icon-6.png" alt="add-contact-icon-6" height="20" /></i><span> {{ t('Saved') }} </span>
 					</a> -->
 					<a class="btn btn-sm make-favorite" id="{{ $post->id }}">
-						<i class=""><img src="{{ url('/images/add-contact-icon-6.png') }}" alt="add-contact-icon-6" height="25" /></i><span> {{ t('Saved') }} </span>
+						<i class=""><img src="{{ url('/images/add-contact-icon-6.png') }}" alt="add-contact-icon-6" height="20" /></i><span> {{ t('Saved') }} </span>
 					</a>
 				@else
 					<!-- <a class="btn btn-default btn-sm make-favorite" id="{{ $post->id }}">
-						<i class=""><img src="../images/add-contact-icon-6.png" alt="add-contact-icon-6" height="25" /></i><span> {{ t('Save') }} </span>
+						<i class=""><img src="../images/add-contact-icon-6.png" alt="add-contact-icon-6" height="20" /></i><span> {{ t('Save') }} </span>
 					</a> -->
 					<a class="btn btn-sm make-favorite" id="{{ $post->id }}">
-						<i class=""><img src="{{ url('/images/add-contact-icon-6.png') }}" alt="add-contact-icon-6" height="25" /></i><span> {{ t('Save') }} </span>
+						<i class=""><img src="{{ url('/images/add-contact-icon-6.png') }}" alt="add-contact-icon-6" height="20" /></i><span> {{ t('Save') }} </span>
 					</a>
 				@endif
 			</div>
