@@ -7,6 +7,46 @@ if (isset($featuredOptions, $featuredOptions['hide_on_mobile']) and $featuredOpt
 	$hideOnMobile = ' hidden-sm';
 }
 ?>
+<style>
+	.featured-list-slider .item-carousel-thumb {
+		text-align: center;
+		background-image: url(https://professionals.gulflabexpo.com/images/back-profile-img.bmp);
+		background-size: 100% 50%;
+		background-repeat: no-repeat;
+		object-fit: cover;
+	}
+	.featured-list-slider .item a img {
+		width: 155px;
+		height: 155px;
+		object-fit: cover;
+		object-position: top;
+		border-radius: 50%;
+		margin-top: 15px!important;
+		display: inline-block;
+	}
+
+	.featured-list-slider .item .item-name {
+		color: #0b76a8;
+		background: none;
+		font-weight: 700;
+		font-size: 15px;
+	}
+
+	.featured-list-slider .item > a {
+		color: #16a085;
+	}
+
+	.featured-list-slider .item .detail-line-value {
+		font-size: 14px;
+	}
+
+	@media (max-width: 991px) {
+		.featured-list-slider .item a img {
+			width: 125px;
+			height: 125px;
+		}
+	}
+</style>
 @if (isset($featured) and !empty($featured) and $featured->posts->count() > 0)
 	@includeFirst([config('larapen.core.customizedViewPath') . 'home.inc.spacer', 'home.inc.spacer'], ['hideOnMobile' => $hideOnMobile])
 	<div class="container-fluid{{ $hideOnMobile }}">
@@ -36,9 +76,9 @@ if (isset($featuredOptions, $featuredOptions['hide_on_mobile']) and $featuredOpt
 								<?php
 								// Main Picture
 								if ($post->pictures->count() > 0) {
-									$postImg = imgUrl($post->pictures->get(0)->filename, 'medium');
+									$postImg = imgUrl($post->pictures->get(0)->filename, 'big');
 								} else {
-									$postImg = imgUrl(config('larapen.core.picture.default'), 'medium');
+									$postImg = imgUrl(config('larapen.core.picture.default'), 'big');
 								}
 								?>
 								<div class="item">
@@ -46,7 +86,7 @@ if (isset($featuredOptions, $featuredOptions['hide_on_mobile']) and $featuredOpt
 										<span class="item-carousel-thumb">
 											<img class="img-fluid" src="{{ $postImg }}" alt="{{ $post->title }}" style="border: 1px solid #e7e7e7; margin-top: 2px;">
 										</span>
-										<span class="item-name">{{ \Illuminate\Support\Str::limit($post->title, 70) }}</span>
+										<h5 class="item-name add-title">{{ \Illuminate\Support\Str::limit($post->title, 70) }}</h5>
 												{{-- @if ( $post->getPostFieldsValues($post->category->tid, $post->id)->count() > 0)
 									<?php $valid_array = ['Employer','Designation']; ?>
 									@foreach($post->getPostFieldsValues($post->category->tid, $post->id)->sortByDesc('fields.name') as $field)
@@ -77,30 +117,24 @@ if (isset($featuredOptions, $featuredOptions['hide_on_mobile']) and $featuredOpt
 									@endforeach
 									@endif --}}
 
-									<div class="detail-line pb-2 ">
-										<div class="rounded-small ">
-											<span class="px-2 detail-line-value" style="float: unset">
-
-												<i class="fas fa-briefcase"></i>
-
-												{{ $post->designation? $post->designation : 'Not Entered'}}</span>
+									<div class="detail-line">
+										<div class="rounded-small">
+											<p class="px-2 detail-line-value overflow-hidden-one-line mb-0 text-center" style="float: unset">
+												{{ $post->designation? $post->designation : 'Not Entered'}}</p>
 										</div>
 									</div>
 
-									<div class="detail-line pb-2 ">
-										<div class="rounded-small ">
-											<span class="px-2 detail-line-value" style="float: unset">
-
-												<i class="fas fa-building"></i>
-
-												{{ $post->employer? $post->employer : 'Not Entered'}}</span>
+									<div class="detail-line pb-1">
+										<div class="rounded-small">
+											<p class="px-2 detail-line-value overflow-hidden-one-line mb-0 text-center" style="float: unset">
+												{{ $post->employer? $post->employer : 'Not Entered'}}</p>
 										</div>
 									</div>
 
-									<span class="item-location">
+									<span class="item-location text-left">
 										<i class="icon-location-2"></i>&nbsp;
 										@if($post->city)
-										{{ $post->post_country->asciiname.' - '.$post->city->name }}
+										{{ $post->post_country->asciiname}}
 										@else
 											{{ $post->post_country->asciiname }}
 										@endif

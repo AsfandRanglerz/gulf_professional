@@ -1436,7 +1436,7 @@ if (request()->segment(1) != 'countries') {
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 										<span class="icon-user fa hidden-sm"></span>
 										<span>{{ auth()->user()->name }}</span>
-										<span class="badge badge-pill badge-important count-threads-with-new-messages hidden-sm">0</span>
+										<!-- <span class="badge badge-pill badge-important count-threads-with-new-messages hidden-sm">0</span> -->
 										<span class="icon-down-open-big fa"></span>
 									</a>
 									<?php
@@ -1500,7 +1500,8 @@ if (request()->segment(1) != 'countries') {
 						<div class="menubar-nav">
 							<ul class="nav navbar-nav hov">
 								<li class="coll mb-md-0 mb-2"><a class="botom-navabr" href="{{ url('/') }}">Home</a></li>
-								<li class="coll mb-md-0 mb-2"><a class="botom-navabr" href="#">About Us</a></li>
+								<li class="coll mb-md-0 mb-2"><a class="botom-navabr" href="{{ url('page/about-us') }}">About Us</a></li>
+								<li class="coll mb-md-0 mb-2"><a class="botom-navabr" href="{{ url('page/faq') }}">FAQs</a></li>
 								@if (auth()->check())
 									<li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{ url('account') }}">{{ auth()->user()->name }}</a></li>
 									<li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{ url('account') }}">My Account</a></li>
@@ -1674,7 +1675,7 @@ if (request()->segment(1) != 'countries') {
 							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
 								<i class="icon-user fa hidden-sm"></i>
 								<span>{{ auth()->user()->name }}</span>
-								<span class="badge badge-pill badge-important count-threads-with-new-messages hidden-sm">0</span>
+								<!-- <span class="badge badge-pill badge-important count-threads-with-new-messages hidden-sm">0</span> -->
 								@if(\Auth::user()->is_admin == 0)<i class="icon-down-open-big fa hidden-sm"></i>@endif
 							</a>
 							@if(\Auth::user()->is_admin == 0)
