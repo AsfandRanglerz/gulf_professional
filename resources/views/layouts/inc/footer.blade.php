@@ -603,5 +603,9 @@ if (
         /*pages outer container*/
         // $('.main-container > .container').addClass('container-fluid').removeClass('container');
         /*pages outer container*/
+		if($('body div').hasClass('faq-pg-content')) {
+			$('.inner-box').css({"background": "none", "border": "none"});	
+			$('.page-content > h3, .title-1, hr.center-block').css({"display": "none"});
+		}
     });
 </script>

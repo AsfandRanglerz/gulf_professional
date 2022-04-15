@@ -24,6 +24,73 @@ if (request()->segment(1) != 'countries') {
 }
 ?>
 <style>
+	 .faq-pg-content .card {
+        border: none;
+        background: none;
+        margin-bottom: 10px;
+    }
+    
+    .faq-pg-content .card-header {
+        padding: 0;
+        border: none;
+        border-radius: 8px;
+    }
+
+    .faq-pg-content h5 {
+        background-color: #fff;
+        border: 2px solid #0b76a8;
+        border-radius: 4px;
+        color: #444;
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+        outline: none;
+        transition: 0.4s;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0;
+    }
+
+    .faq-pg-content .card-body {
+        padding: 8px 16px;
+        border: 1px solid #ddd;
+        margin: 8px 0;
+        text-align: justify;
+        font-size: 16px;
+        font-weight: 300;
+    }
+
+    .faq-pg-content button.btn.btn-link.collapsed:after {
+        content: "\2795";
+        font-size: 13px;
+        color: #777;
+        float: right;
+        margin-left: 5px;
+    }
+
+    .faq-pg-content button.btn.btn-link:after {
+        content: "\2796";
+        font-size: 13px;
+        color: #777;
+        float: right;
+        margin-left: 5px;
+    }
+
+    .faq-pg-content button.btn.btn-link {
+        color: #000;
+        width: 100%;
+        text-align: left;
+        font-weight: bold;
+        font-size: 16px;
+        text-decoration: none;
+        padding: 12px;
+    }
+
+    .faq-pg-content button.btn.btn-link:hover, .faq-pg-content button.btn.btn-link:focus,  .faq-pg-content button.btn.btn-link:active {
+        background-color: #eee;
+    }
+
 	.category-list.make-grid .item-list .make-favorite.btn-success {
 		background: #c89b0555;
 		border: none;
@@ -1501,7 +1568,7 @@ if (request()->segment(1) != 'countries') {
 							<ul class="nav navbar-nav hov">
 								<li class="coll mb-md-0 mb-2"><a class="botom-navabr" href="{{ url('/') }}">Home</a></li>
 								<li class="coll mb-md-0 mb-2"><a class="botom-navabr" href="{{ url('page/about-us') }}">About Us</a></li>
-								<li class="coll mb-md-0 mb-2"><a class="botom-navabr" href="{{ url('page/faq') }}">FAQs</a></li>
+								<li class="coll mb-md-0 mb-2 pl-md-0"><a class="botom-navabr" href="{{ url('page/faq') }}">FAQs</a></li>
 								@if (auth()->check())
 									<li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{ url('account') }}">{{ auth()->user()->name }}</a></li>
 									<li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{ url('account') }}">My Account</a></li>
