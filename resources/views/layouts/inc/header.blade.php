@@ -24,6 +24,26 @@ if (request()->segment(1) != 'countries') {
 }
 ?>
 <style>
+    .about-us-page h2.heading {
+        color: #096791;
+        font-weight: bold;
+        margin: 0 0 15px 0!important;
+    }
+
+    .about-us-page p.paragraph {
+        color: #000000ad !important;
+        font-size: 18px;
+    }
+
+    .page-content .about-us-page .inner-box {
+        background: none;
+        border: none;
+    }
+
+	.about-us-page a.blue-link {
+		text-decoration: underline;
+	}
+
 	 .faq-pg-content .card {
         border: none;
         background: none;
