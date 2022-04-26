@@ -24,97 +24,6 @@ if (request()->segment(1) != 'countries') {
 }
 ?>
 <style>
-	.featured-list-slider .item > a {
-		border: solid 1px #ddd;
-	}
-
-    .about-us-page h2.heading {
-        color: #096791;
-        font-weight: bold;
-        margin: 0 0 15px 0!important;
-    }
-
-    .about-us-page p.paragraph {
-        color: #000000ad !important;
-        font-size: 18px;
-    }
-
-    .page-content .about-us-page .inner-box {
-        background: none;
-        border: none;
-    }
-
-	.about-us-page a.blue-link {
-		text-decoration: underline;
-	}
-
-	 .faq-pg-content .card {
-        border: none;
-        background: none;
-        margin-bottom: 10px;
-    }
-    
-    .faq-pg-content .card-header {
-        padding: 0;
-        border: none;
-        border-radius: 8px;
-    }
-
-    .faq-pg-content h5 {
-        background-color: #fff;
-        border: 2px solid #0b76a8;
-        border-radius: 4px;
-        color: #444;
-        cursor: pointer;
-        width: 100%;
-        text-align: left;
-        outline: none;
-        transition: 0.4s;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 0;
-    }
-
-    .faq-pg-content .card-body {
-        padding: 8px 16px;
-        border: 1px solid #ddd;
-        margin: 8px 0;
-        text-align: justify;
-        font-size: 16px;
-        font-weight: 300;
-    }
-
-    .faq-pg-content button.btn.btn-link.collapsed:after {
-        content: "\2795";
-        font-size: 13px;
-        color: #777;
-        float: right;
-        margin-left: 5px;
-    }
-
-    .faq-pg-content button.btn.btn-link:after {
-        content: "\2796";
-        font-size: 13px;
-        color: #777;
-        float: right;
-        margin-left: 5px;
-    }
-
-    .faq-pg-content button.btn.btn-link {
-        color: #000;
-        width: 100%;
-        text-align: left;
-        font-weight: bold;
-        font-size: 16px;
-        text-decoration: none;
-        padding: 12px;
-    }
-
-    .faq-pg-content button.btn.btn-link:hover, .faq-pg-content button.btn.btn-link:focus,  .faq-pg-content button.btn.btn-link:active {
-        background-color: #eee;
-    }
-
 	.category-list.make-grid .item-list .make-favorite.btn-success {
 		background: #c89b0555;
 		border: none;
@@ -186,7 +95,7 @@ if (request()->segment(1) != 'countries') {
 	.select2-container {
 		z-index: 2;
 	}
-	
+
 	.select2-container--default .select2-selection--single .select2-selection__rendered,
 	.select2-container--default .select2-selection--single .select2-selection__arrow {
 		background-color: #FFF;
@@ -216,7 +125,7 @@ if (request()->segment(1) != 'countries') {
 		border-radius: 50%;
 		margin-top: 15px!important;
 	}
-	
+
 	.add-image a img {
 		width: 155px;
 		height: 155px;
@@ -1391,6 +1300,18 @@ if (request()->segment(1) != 'countries') {
 	}
 
 	@media (max-width: 575px) {
+		.category-list.make-grid .item-list .make-favorite i > img {
+			height: 18px;
+		}
+
+		.mobile-filter-bar li:last-child {
+			display: none;
+		}
+
+		.mobile-filter-bar .dropdown-menu>li:nth-last-child(2), .mobile-filter-bar .dropdown-menu>li:nth-last-child(3) {
+			display: none;
+		}
+
 		span.item-location a {
 			font-size: 12px;
 		}
@@ -1592,7 +1513,7 @@ if (request()->segment(1) != 'countries') {
 							<ul class="nav navbar-nav hov">
 								<li class="coll mb-md-0 mb-2"><a class="botom-navabr" href="{{ url('/') }}">Home</a></li>
 								<li class="coll mb-md-0 mb-2"><a class="botom-navabr" href="{{ url('page/about-us') }}">About Us</a></li>
-								<li class="coll mb-md-0 mb-2 pl-md-0"><a class="botom-navabr" href="{{ url('page/faq') }}">FAQs</a></li>
+								<li class="coll mb-md-0 mb-2"><a class="botom-navabr" href="{{ url('page/faq') }}">FAQs</a></li>
 								@if (auth()->check())
 									<li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{ url('account') }}">{{ auth()->user()->name }}</a></li>
 									<li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{ url('account') }}">My Account</a></li>
@@ -1603,8 +1524,6 @@ if (request()->segment(1) != 'countries') {
 										<li class="coll mb-md-0 mb-2 max-767-content"><a class="botom-navabr" href="{{ route('impersonate.leave') }}">{{ t('Leave') }}</a></li>										
 									@endif
 								@endif
-							
-								<li class="coll mb-md-0 mb-2 max-767-content"><a class="botom-navabr" href="#">FAQs</a></li>
 								<li class="coll mb-md-0 max-767-content"><a class="botom-navabr" href="{{url('contact')}}">Contact Us</a></li>
 							</ul>
 						</div>
@@ -1628,15 +1547,14 @@ if (request()->segment(1) != 'countries') {
 									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{$fulllink}}" style="border-bottom: 1px solid #FFF">My Posts</a>
 									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{ url('account/favourite') }}" style="border-bottom: 1px solid #FFF">Contact Directory</a>
 									<a class="postadd btn orange-btn list-prof-btns" href="https://professionals.gulflabexpo.com/forum/index.php" style="border-bottom: 1px solid #FFF">
-										<span class="fa fa-plus-circle d-md-inline-block d-none mr-2"></span><span class="fa fa-plus d-md-none d-inline-block mr-2"></span> {{ ('Join a Discussion') }}
+										<span class="fa fa-plus-circle d-md-inline-block d-none mr-2"></span>{{ ('Join a Discussion') }}
 									</a>
 									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{ \App\Helpers\UrlGen::logout() }}">{{ t('log_out') }}</a>
 							@else
 									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{url('login')}}" style="border-bottom: 1px solid #FFF">Profile Log In</a>
 									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{url('register')}}" style="border-bottom: 1px solid #FFF">Create Your Profile</a>
-									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{ url('account/favourite') }}" style="border-bottom: 1px solid #FFF">Contact Directory</a>
 									<a class="postadd btn orange-btn list-prof-btns" href="{{ url('login') }}"{{ url('create-1') }}>
-										<span class="fa fa-plus-circle d-md-inline-block d-none mr-2"></span><span class="fa fa-plus d-md-none d-inline-block mr-2"></span> {{ ('Join a Discussion') }}
+										<span class="fa fa-plus-circle d-md-inline-block d-none mr-2"></span>{{ ('Join a Discussion') }}
 									</a>
 						@endif
 						<!-- <a class="btn orange-btn list-prof-btns"><span class="fa fa-plus-circle mr-2"></span>Create an Ad</a> -->

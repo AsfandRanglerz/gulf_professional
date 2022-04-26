@@ -109,9 +109,9 @@
 
                                     	// Get Post's Pictures
                                         if ($post->pictures->count() > 0) {
-                                            $postImg = imgUrl($post->pictures->get(0)->filename, 'medium');
+                                            $postImg = imgUrl($post->pictures->get(0)->filename, 'big');
                                         } else {
-                                            $postImg = imgUrl(config('larapen.core.picture.default'), 'medium');
+                                            $postImg = imgUrl(config('larapen.core.picture.default'), 'big');
                                         }
 
                                     	// Get country flag
@@ -184,13 +184,13 @@
                                                         </a>
                                                     </p>
 												@endif
-												@if (in_array($pagePath, ['my-posts']) and isVerifiedPost($post) and $post->archived==0)
+												<!-- @if (in_array($pagePath, ['my-posts']) and isVerifiedPost($post) and $post->archived==0)
 													<p>
 														<a class="btn btn-warning btn-sm confirm-action"  data-toggle="tooltip" title="Makes profile invisible without deleting it" href="{{ url('account/'.$pagePath.'/'.$post->id.'/offline') }}">
 															<i class="icon-eye-off"></i> {{ t('Offline') }}
 														</a>
 													</p>
-												@endif
+												@endif -->
 												@if (in_array($pagePath, ['archived']) and $post->user_id==$user->id and $post->archived==1)
 													<p>
                                                         <a class="btn btn-info btn-sm confirm-action" href="{{ url('account/'.$pagePath.'/'.$post->id.'/repost') }}">
