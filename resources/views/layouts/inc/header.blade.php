@@ -24,6 +24,10 @@ if (request()->segment(1) != 'countries') {
 }
 ?>
 <style>
+	.featured-list-slider .item > a {
+		border: solid 1px #ddd;
+	}
+
     .about-us-page h2.heading {
         color: #096791;
         font-weight: bold;
