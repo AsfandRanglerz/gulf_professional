@@ -24,6 +24,21 @@ if (request()->segment(1) != 'countries') {
 }
 ?>
 <style>
+	.featured-list-slider .item>a {
+		border: solid 1px #ddd;
+		margin: 0 2px;
+	}
+
+	img[alt="IT Professionals"] {
+		height: 100px!important;
+		position: relative;
+		top: -10px;
+	}
+
+	img[alt="IT Professionals"] + h6 {
+		margin-top: -5px;
+	}
+
 	.category-list.make-grid .item-list .make-favorite.btn-success {
 		background: #c89b0555;
 		border: none;
@@ -595,8 +610,12 @@ if (request()->segment(1) != 'countries') {
 
 	.box-title h2 span {
 		text-transform: uppercase!important;
-		font-size: 18px!important;
+		font-size: 16px!important;
 		font-weight: bold;
+		width: 70%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 
 	.sell-your-item {
