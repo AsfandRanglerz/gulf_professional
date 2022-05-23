@@ -249,6 +249,7 @@
 @yield('before_scripts')
 
 <script src="{{ url(mix('js/app.js')) }}"></script>
+<!-- <script src="../js/app.js"></script> -->
 @if (config('settings.optimization.lazy_loading_activation') == 1)
 	<script src="{{ url()->asset('assets/plugins/lazysizes/lazysizes.min.js') }}" async=""></script>
 @endif

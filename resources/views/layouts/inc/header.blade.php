@@ -1550,9 +1550,9 @@ if (request()->segment(1) != 'countries') {
 												<span class="icon-user-1"></span> My Account
 											</a>
 										</li>
-										<li class="dropdown-item"><a href="{{ url('account/my-posts') }}"><span class="icon-user"></span> My Profile </a></li>
+										<!-- <li class="dropdown-item"><a href="{{ url('account/my-posts') }}"><span class="icon-user"></span> My Profile </a></li>
 										<li class="dropdown-item"><a href="{{$fulllink}}"><span class="icon-clipboard"></span> My Posts </a></li>
-										<li class="dropdown-item"><a href="{{ url('account/favourite') }}"><span class="icon-vcard"></span> Contact Directory </a></li>
+										<li class="dropdown-item"><a href="{{ url('account/favourite') }}"><span class="icon-vcard"></span> Contact Directory </a></li> -->
 										<li class="dropdown-divider"></li>
 										<li class="dropdown-item">
 											@if (app('impersonate')->isImpersonating())
@@ -1603,9 +1603,9 @@ if (request()->segment(1) != 'countries') {
 								@if (auth()->check())
 									<li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{ url('account') }}">{{ auth()->user()->name }}</a></li>
 									<li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{ url('account') }}">My Account</a></li>
-									<li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{ url('account/my-posts') }}">My Profile</a></li>
+									<!-- <li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{ url('account/my-posts') }}">My Profile</a></li>
 									<li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{$fulllink}}">My Posts</a></li>
-									<li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{ url('account/favourite') }}">Contact Directory</a></li>
+									<li class="coll mb-md-0 mb-2 d-none"><a class="botom-navabr" href="{{ url('account/favourite') }}">Contact Directory</a></li> -->
 									@if (app('impersonate')->isImpersonating())
 										<li class="coll mb-md-0 mb-2 max-767-content"><a class="botom-navabr" href="{{ route('impersonate.leave') }}">{{ t('Leave') }}</a></li>										
 									@endif
@@ -1629,9 +1629,9 @@ if (request()->segment(1) != 'countries') {
 							@if(auth()->user())
 								{{--								<a class="postadd btn orange-btn list-prof-btns" href="{{ url('create-1') }}"{{ url('create-1') }}>--}}
 									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{ url('account') }}" style="border-bottom: 1px solid #FFF">My Account</a>
-									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{ url('account/my-posts') }}" style="border-bottom: 1px solid #FFF">My Profile</a>
+									<!-- <a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{ url('account/my-posts') }}" style="border-bottom: 1px solid #FFF">My Profile</a>
 									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{$fulllink}}" style="border-bottom: 1px solid #FFF">My Posts</a>
-									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{ url('account/favourite') }}" style="border-bottom: 1px solid #FFF">Contact Directory</a>
+									<a class="postadd btn orange-btn list-prof-btns max-767-content" href="{{ url('account/favourite') }}" style="border-bottom: 1px solid #FFF">Contact Directory</a> -->
 									<a class="postadd btn orange-btn list-prof-btns" href="https://professionals.gulflabexpo.com/forum/index.php" style="border-bottom: 1px solid #FFF">
 										<span class="fa fa-plus-circle d-md-inline-block d-none mr-2"></span>{{ ('Join a Discussion') }}
 									</a>

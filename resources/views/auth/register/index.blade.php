@@ -48,7 +48,7 @@
 				<div class="col-md-8 page-content">
 					<div class="inner-box">
 						<h2 class="title-2">
-							<strong><i class="icon-user-add"></i> Create your FREE Profile, Discover networking opportunities </strong>
+							<strong> Create your FREE Profile, Discover networking opportunities </strong>
 						</h2>
 
 						@if (

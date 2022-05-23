@@ -597,6 +597,52 @@ if (
 		</div>
 	</div>
 </footer> -->
+	<div class="modal fade" id="profFav" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+		<div class="modal-dialog  modal-sm">
+			<div class="modal-content">
+				
+				<div class="modal-header">
+					<h4 class="modal-title"> Add To Favourite </h4>
+					
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+
+				</div>
+					<div class="modal-body">
+					<p class="mb-0">The profile has been saved to your favourites list!</p>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-success pull-right" data-dismiss="modal">Ok</button>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="profRemFav" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+		<div class="modal-dialog  modal-sm">
+			<div class="modal-content">
+				
+				<div class="modal-header">
+					<h4 class="modal-title"> Remove From Favourite </h4>
+					
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">×</span>
+						<span class="sr-only">Close</span>
+					</button>
+
+				</div>
+					<div class="modal-body">
+					<p class="mb-0">The profile has been removed from your favourites list!</p>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-success pull-right" data-dismiss="modal">Ok</button>
+					</div>
+				
+			</div>
+		</div>
+	</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $(function () {
@@ -607,5 +653,15 @@ if (
 			$('.inner-box').css({"background": "none", "border": "none"});	
 			$('.page-content > h3, .title-1, hr.center-block').css({"display": "none"});
 		}
+		$('span:contains(" Saved ")').closest('.make-favorite').addClass('btn-success');
+		$('.make-favorite').on('click', function() {
+			if($(this).children('span').text() == ' Save ' || $(this).children('i').attr('data-original-title')=='Add to my Contact Directory') {
+				$(this).children('span').text(' Saved ');
+				$('#profFav').modal('show');
+			} else {
+				$(this).children('span').text(' Save ');
+				$('#profRemFav').modal('show');
+			}
+		});
     });
 </script>

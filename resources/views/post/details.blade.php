@@ -93,9 +93,9 @@
 
                             </strong>
 
-							@if (isset($post->postType) and !empty($post->postType))
+							<!-- @if (isset($post->postType) and !empty($post->postType))
 								<small class="label label-default adlistingtype">{{ $post->postType->name }}</small>
-							@endif
+							@endif -->
 							@if ($post->featured==1 and !empty($post->latestPayment))
 								@if (isset($post->latestPayment->package) and !empty($post->latestPayment->package))
 									<i class="icon-ok-circled tooltipHere"
@@ -536,9 +536,7 @@
 										} catch (\Exception $e) {}
 										?>
 									@else
-										{{-- {!! genPhoneNumberBtn($post, true) !!} --}}
-									{{--dfd
-										{!! genEmailContactBtn($post, true) !!}--}}
+										<a href="#quickLogin" data-toggle="modal" class="btn btn-block" style="background: whitesmoke;border: 1px solid;"><i class="far fa-envelope-open mr-2"></i> Send a message</a>
 									@endif
 								</div>
 							</div>
