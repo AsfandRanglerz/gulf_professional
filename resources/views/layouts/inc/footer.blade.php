@@ -644,7 +644,7 @@ if (
 		</div>
 	</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>r
+<script>
     $(function () {
         /*pages outer container*/
         // $('.main-container > .container').addClass('container-fluid').removeClass('container');
